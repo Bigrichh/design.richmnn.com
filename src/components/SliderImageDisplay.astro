@@ -1,0 +1,30 @@
+---
+import ArrowDown from "../assets/Icons/ArrowDown.svg";
+
+const { src, alt, label, showSTV } = Astro.props;
+---
+
+<div
+  class="relative w-full h-[236px] md:h-[451px] xl:w-[810px] xl:h-[600px] self-center rounded-[4px] overflow-hidden bg-bgsecondary font-mr font-semibold text-[10px] md:text-[14px] text-secondary"
+>
+  <div
+    class="absolute top-0 md:top-[16px] left-[50%] translate-x-[-50%] px-[6px] py-[12px] md:px-[8px] md:py-[16px]"
+  >
+    <p>{label}</p>
+  </div>
+
+  <div
+    class="img-scroll-container rounded-[4px] w-[268px] md:w-[530px] xl:w-[730px] 2xl:w-[730px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[150px] md:h-[290px] xl:h-[410px] overflow-y-scroll"
+  >
+    <img class="w-full h-auto object-cover" src={src} alt={alt} />
+  </div>
+
+  {
+    showSTV && (
+      <div class="absolute bottom-[8px] md:bottom-[16px] left-[50%] translate-x-[-50%] py-[12px] md:px-[8px] md:py-[16px] flex items-center gap-[4px]">
+        <p>Scroll to view</p>
+        <ArrowDown class="size-[14px] md:size-[20px]" />
+      </div>
+    )
+  }
+</div>

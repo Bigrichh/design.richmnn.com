@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Contact";
+const pageDescription =
+  "Get in touch with Richmann — Reach out for collaborations, opportunities, or just to say hi.";
+const ogURL = "https://design.richmnn.com/contact";
+const keywords =
+  "Contact, Reach Out, Collaboration, Software Engineer, Product Designer, Professional Connection, Web Design & Development, Networking, Inquiry, Email, Get in Touch, Work Opportunities, Creative Collaboration, Design Consultation, Developer Contact, Tech Industry Connections, Instagram, LinkedIn, Dribble, Github";
+const gap = 32;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+  gap={gap}
+>
+  <!-- Header -->
+  <div class="w-full text-[16px]">
+    <p class="italic text-tertiary">Get In Touch</p>
+    <h1 class="text-primary font-mr font-semibold">Let's Connect</h1>
+  </div>
+
+  <div class="flex flex-col gap-[120px]">
+    <!-- Work -->
+    <div class="w-full flex flex-col gap-[12px] text-[14px] font-semibold">
+      <h2 class="text-secondary">Work</h2>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">Mail</p>
+        <a
+          href="mailto:richmanaddai@gmail.com"
+          class="text-primary underline hover:text-secondary"
+        >
+          richmanaddai@gmail.com
+        </a>
+      </div>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">LinkedIn</p>
+        <a
+          href="https://www.linkedin.com/in/richmann-addai-a96777256/"
+          target="_blank"
+          class="text-primary underline hover:text-secondary">richmann-addai</a
+        >
+      </div>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">Github</p>
+        <a
+          href="https://github.com/Bigrichh"
+          target="_blank"
+          class="text-primary underline hover:text-secondary">bigirchh</a
+        >
+      </div>
+      <hr />
+    </div>
+
+    <!-- Portfolios -->
+    <div class="w-full flex flex-col gap-[12px] text-[14px] font-semibold">
+      <h2 class="text-secondary">Portfolios</h2>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">Engineering Portfolio</p>
+        <a
+          href=""
+          target="_blank"
+          class="text-primary underline hover:text-secondary"
+        >
+          dev.richmnn.com
+        </a>
+      </div>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">Design Portfolio</p>
+        <a
+          href=""
+          target="_blank"
+          class="text-primary underline hover:text-secondary"
+        >
+          design.richmnn.com
+        </a>
+      </div>
+      <hr />
+    </div>
+
+    <!-- Personal -->
+    <div class="w-full flex flex-col gap-[12px] text-[14px] font-semibold">
+      <h2 class="text-secondary">Personal</h2>
+      <hr />
+      <div class="w-full flex justify-between">
+        <p class="text-tertiary">Instagram</p>
+        <a
+          href="https://instagram.com/big.richhhh"
+          target="_blank"
+          class="text-primary underline hover:text-secondary"
+        >
+          big.richhhh
+        </a>
+      </div>
+      <hr />
+    </div>
+  </div>
+</BaseLayout>

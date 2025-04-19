@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home";
+const pageDescription =
+  "Richmann - Software Engineer x Product designer - designing clean, thouhtful user experiences and building the tech bringing those experiences to life.";
+const ogURL = "https://design.richmnn.com";
+const keywords =
+  "Richmann Addai, product design portfolio, UX design, UI designer Ghana, user interface design, digital product design, creative designer, Figma expert, clean design systems, product strategy, SaaS designer";
+const gap = 32;
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+  gap={gap}
+>
+  <!-- Header -->
+  <div class="w-full text-[16px]">
+    <p class="italic font-int text-tertiary">
+      The design portfolio of Richmann Addai
+    </p>
+    <h1
+      class="text-primary font-semibold flex flex-wrap gap-[8px] text-nowrap w-full font-mr"
+    >
+      <span>UI/UX Product Designer</span>
+      <span>|</span>
+      <span class="mt-[-6px] md:mt-0">Professional Button Aligner</span>
+      <span class="mt-[-6px] md:mt-0">|</span>
+      <span class="mt-[-6px] md:mt-0">Designer of Interfaces</span>
+    </h1>
+  </div>
+
+  <!-- Hi -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">Hi,</h2>
+      <p class="text-tertiary">
+        <span class="block"
+          >I design interfaces that feel simple, functional, and human.</span
+        >
+        <span class="block"
+          >Currently shaping digital experiences — part designer, part engineer
+          — @ <a
+            target="_blank"
+            href="https://utopiatech.africa/"
+            class="underline text-primary hover:text-secondary">Utopia Tech</a
+          >
+        </span>
+        <span class="block">This is my humble design portfolio. </span>
+        <span class="block"
+          >You may wish to <a
+            href="/work"
+            class="underline text-primary hover:text-secondary"
+            >explore my work here</a
+          >
+        </span>
+        <span class="block"
+          >Or <a
+            href="/about"
+            class="underline text-primary hover:text-secondary"
+            >learn more about me</a
+          > — my work ethic, and my design process.
+        </span>
+        <span class="block"
+          >For extras, context and ways to reach me — the links below know more
+          than I do ↓
+        </span>
+      </p>
+    </div>
+  </div>
+</BaseLayout>

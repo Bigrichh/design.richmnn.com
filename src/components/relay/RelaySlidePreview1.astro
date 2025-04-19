@@ -1,0 +1,115 @@
+---
+import SliderImageDisplay from "../SliderImageDisplay.astro";
+import CarouselArrowLeft from "../../assets/Icons/CarouselArrowLeft.svg";
+import CarouselArrowRight from "../../assets/Icons/CarouselArrowRight.svg";
+---
+
+<div
+  class="swiper mySwiper w-full h-full md:h-[451px] xl:w-[810px] xl:h-[600px]"
+>
+  <div class="swiper-wrapper">
+    <!-- slide 1 -->
+    <div class="swiper-slide">
+      <SliderImageDisplay
+        src="/work-images/relay/mnotifylanding.jpg"
+        alt="Mnotify landing page image"
+        label="Existing Platform - Mnotify"
+        showSTV={false}
+      />
+    </div>
+    <!-- slide 2 -->
+    <div class="swiper-slide">
+      <SliderImageDisplay
+        src="/work-images/relay/arkesellanding.jpg"
+        alt="Arkkesel landing page image"
+        label="Existing Platform - Arkesel"
+        showSTV={false}
+      />
+    </div>
+    <!-- slide 3 -->
+    <div class="swiper-slide">
+      <SliderImageDisplay
+        src="/work-images/relay/relayhomepage.jpg"
+        alt="Relay home page image"
+        label="Relay"
+        showSTV={true}
+      />
+    </div>
+  </div>
+  <div
+    class="w-[96px] absolute flex gap-[24px] bottom-[-32px] left-[50%] translate-x-[-50%]"
+  >
+    <button
+      class="swiper-button-prev size-[36px] p-[6px] border-[1.5px] border-borderprimary rounded-full absolute left-0"
+    >
+      <CarouselArrowLeft />
+    </button>
+    <button
+      class="swiper-button-next size-[36px] p-[6px] border-[1.5px] border-borderprimary rounded-full absolute left-0"
+    >
+      <CarouselArrowRight />
+    </button>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<style>
+  /* .swiper-body {
+      position: relative;
+      height: 600px;
+    } */
+  .swiper {
+    position: relative;
+    overflow: visible;
+  }
+  .swiper-wraper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: auto !important;
+      height: auto !important;
+      padding: 0 !important;
+    }
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none; /* Hides Swiper's default arrows */
+    content: none;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { EffectFade, Navigation, Pagination } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import "swiper/css/navigation";
+  import "swiper/css/effect-fade";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".mySwiper", {
+      modules: [EffectFade, Navigation, Pagination],
+      spaceBetween: 10,
+      effect: "fade",
+      centeredSlides: true,
+      speed: 300,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>

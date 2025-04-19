@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ImageDisplay from "../components/ImageDisplay.astro";
+const pageTitle = "Work";
+const pageDescription = "Projects by Richmann Addai - A showcase of product design work";
+const ogURL = "https://design.richmnn.com/work";
+const gap = 16;
+---
+
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} ogURL={ogURL} gap={gap}>
+  <!-- Header -->
+  <div class="w-full text-[16px]">
+    <p class="italic text-tertiary">2023-25</p>
+    <h1 class="text-primary font-mr font-semibold">Selected Work</h1>
+  </div>
+
+  <!-- Projeccts Container -->
+  <div
+    class="self-center w-full lg:w-[810px] h-fit flex flex-col gap-[120px] font-mr"
+  >
+    <!-- First class -->
+    <a href="" class="w-full h-fit flex flex-col gap-[48px]">
+      <ImageDisplay
+        src="/work-images/firstclass/firstClass1.jpg"
+        alt="FirstClass image"
+        label=""
+        showLabel={false}
+      />
+      <div class="self-center w-full lg:w-[610px] flex gap-[120px]">
+        <p class="hidden md:block text-[14px] text-tertiary text-nowrap">
+          Coming Soon
+        </p>
+        <div class="flex flex-col gap-[16px] text-[14px]">
+          <h2 class="text-secondary font-semibold">FirstClass</h2>
+          <p class="text-tertiary">
+            Built for students who want to thrive, not just survive. I designed
+            an application that makes university life easier—from finding
+            resources to staying organized—so students can actually focus on the
+            degree, not the chaos.
+          </p>
+          <p class="text-[12px] text-tertiary">
+            SaaS, Brand, Product Design — Self-initiated
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Banda -->
+    <a href="/projects/banda" class="w-full h-fit flex flex-col gap-[48px]">
+      <ImageDisplay
+        src="/work-images/banda/banda1.jpg"
+        alt="Banda image"
+        label=""
+        showLabel={false}
+      />
+      <div class="self-center w-full lg:w-[610px] flex gap-[120px]">
+        <p class="hidden md:block text-[14px] text-tertiary text-nowrap">
+          2025
+        </p>
+        <div class="flex flex-col gap-[16px] text-[14px]">
+          <h2 class="text-secondary font-semibold">Banda</h2>
+          <p class="text-tertiary">
+            Ghanaian fashion, turned digital. Banda’s style speaks for itself—my
+            job was to make sure the website let it. Clean, spacial layouts that
+            give the clothes room to breathe, and shoppers room to buy.
+          </p>
+          <p class="text-[12px] text-tertiary">Web Design, Brand — Freelance</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Relay -->
+    <a href="/projects/relay">
+      <div class="w-full h-fit flex flex-col gap-[48px]">
+        <ImageDisplay
+          src="/work-images/relay/relay1.jpg"
+          alt="Relay image"
+          label=""
+          showLabel={false}
+        />
+        <div class="self-center w-full lg:w-[610px] flex gap-[120px]">
+          <p class="hidden md:block text-[14px] text-tertiary text-nowrap">
+            2025
+          </p>
+          <div class="flex flex-col gap-[16px] text-[14px]">
+            <h2 class="text-secondary font-semibold">Relay</h2>
+            <p class="text-tertiary">
+              Mass texting, minus the mess. I redesigned Relay to help teams
+              send bulk SMS with zero guesswork. Think fast UI, clean layouts,
+              and a little personality so it doesn’t feel like you're using a
+              2002 enterprise dashboard.
+            </p>
+            <p class="text-[12px] text-tertiary">
+              Product, Web Design — In-house
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- EyeContact Vision Care -->
+    <a href="/projects/ecvc">
+      <div class="w-full h-fit flex flex-col gap-[48px]">
+        <ImageDisplay
+          src="/work-images/ecvc/ecvc1.jpg"
+          alt="Eyecontact vision care image"
+          label=""
+          showLabel={false}
+        />
+        <div class="self-center w-full lg:w-[610px] flex gap-[120px]">
+          <p class="hidden md:block text-[14px] text-tertiary text-nowrap">
+            2023
+          </p>
+          <div class="flex flex-col gap-[16px] text-[14px]">
+            <h2 class="text-secondary font-semibold">EyeContact Vision Care</h2>
+            <p class="text-tertiary">
+              You shouldn’t squint to navigate an eye care site. I gave this one
+              a full design refresh—modern visuals, clearer navigation, and a
+              booking flow that makes it easy to schedule a checkup, not a
+              chore.
+            </p>
+            <p class="text-[12px] text-tertiary">Web Design — Freelance</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</BaseLayout>

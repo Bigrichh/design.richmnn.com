@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: rgba(255, 214, 10, 1);
+    --color-secondary: rgba(255, 255, 255, 1);
+    --color-tertiary: rgba(255, 255, 255, 0.7);
+    --color-bgprimary: rgba(0, 0, 0, 1);
+    --color-bgsecondary: rgba(26, 26, 26, 1);
+    --color-borderprimary: rgba(53, 53, 53, 1);
+    
+    --font-mr:"Manrope", sans-serif;
+}
+
+:root {
+    --color-primary: rgba(255, 214, 10, 1);
+    --color-secondary: rgba(255, 255, 255, 1);
+    --color-tertiary: rgba(255, 255, 255, 0.7);
+    --color-bgprimary: rgba(0, 0, 0, 1);
+    --color-bgsecondary: rgba(26, 26, 26, 1);
+    --color-borderprimary: rgba(53, 53, 53, 1);
+    
+    --font-mr:"Manrope", sans-serif;
+  }
+  
+  
+  
+  body {
+    background-color: var(--color-bgprimary);
+  }
+  
+  hr {
+    border: none;
+    height: 0.5px;
+    background-color: var(--color-borderprimary);
+  }
+  
+  body::-webkit-scrollbar, .img-scroll-container::-webkit-scrollbar,
+  .scroll-container::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--color-bgprimary);
+  }
+  
+  body::-webkit-scrollbar-thumb, .img-scroll-container::-webkit-scrollbar-thumb,
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+  }
+  
+  body::-webkit-scrollbar-thumb:hover , .img-scroll-container::-webkit-scrollbar-thumb:hover,
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-tertiary);
+    cursor: pointer;
+  }

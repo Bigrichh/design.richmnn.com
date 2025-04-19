@@ -1,0 +1,108 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+const { gap } = Astro.props;
+
+// Meta tags for seo data
+const { pageTitle } = Astro.props;
+const { pageDescription } = Astro.props;
+const { ogURL } = Astro.props;
+const { keywords } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Meta Tags For SEO -->
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Richmann Addai" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta
+      property="og:image"
+      content="https://richmnn.com/favicon/android-chrome-512x512.png"
+    />
+    <meta property="og:url" content={ogURL} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta
+      name="twitter:image"
+      content="https://richmnn.com/favicon/android-chrome-512x512.png"
+    />
+    <link rel="canonical" href="https://richmnn.com" />
+
+    <!-- Rich Results / Structured Data for Personal Site -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Richmann Addai",
+        "url": "https://richmnn.com",
+        "image": "https://richmnn.com/favicon/android-chrome-512x512.png",
+        "jobTitle": "Product Designer & Software Engineer",
+        "sameAs": [
+          "https://github.com/Bigrichh",
+          "https://www.linkedin.com/in/richmann-addai-a96777256/"
+        ]
+      }
+    </script>
+
+    <!-- Google font import  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Apple-specific settings -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <title>2025 Richmnn | {pageTitle}</title>
+  </head>
+  <body class="bg-bgprimary">
+    <main class="flex w-full justify-center">
+      <div
+        style={`gap: ${gap}vh`}
+        class={`w-[320px] md:w-[610px] flex flex-col py-[48px]`}
+      >
+        <NavBar pageTitle={pageTitle} />
+        <slot />
+        <Footer showHr={true} />
+      </div>
+    </main>
+  </body>
+</html>
