@@ -20,6 +20,8 @@
     --color-borderprimary: rgba(53, 53, 53, 1);
     
     --font-mr:"Manrope", sans-serif;
+
+    --swiper-theme-color: #FFD60A;  /* Black dots, arrows, etc */
   }
   
   
@@ -50,3 +52,51 @@
     background-color: var(--color-tertiary);
     cursor: pointer;
   }
+
+
+  /* === Swiper Navigation Custom Overrides === */
+
+/* Remove default font-based arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none !important;
+  font-size: 0 !important;
+}
+
+/* Disable default sizing/positioning */
+.swiper-button-prev,
+.swiper-button-next {
+  position: static !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin-top: 0 !important;
+  color: inherit !important;
+}
+
+/* Ensure your SVG behaves nicely */
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 25px !important;
+  height: 25px !important;
+  object-fit: contain;
+  /* flex-shrink: 0; */
+}
+
+/* Optional: kill RTL transforms if you don’t need them */
+.swiper-rtl .swiper-button-prev svg,
+.swiper-rtl .swiper-button-next svg {
+  transform: none !important;
+}
+
+/* Optional: Position overrides */
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 0 !important;
+  left: auto !important;
+}
