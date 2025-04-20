@@ -2,12 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageDisplay from "../components/ImageDisplay.astro";
 const pageTitle = "Work";
-const pageDescription = "Projects by Richmann Addai - A showcase of product design work";
+const pageDescription =
+  "Projects by Richmann Addai - A showcase of product design work";
 const ogURL = "https://design.richmnn.com/work";
 const gap = 16;
 ---
 
-<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription} ogURL={ogURL} gap={gap}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  gap={gap}
+>
   <!-- Header -->
   <div class="w-full text-[16px]">
     <p class="italic text-tertiary">2023-25</p>
@@ -21,7 +27,7 @@ const gap = 16;
     <!-- First class -->
     <a href="" class="w-full h-fit flex flex-col gap-[48px]">
       <ImageDisplay
-        src="/work-images/firstclass/firstClass1.jpg"
+        src="/work-images/firstclass/firstClass1.webp"
         alt="FirstClass image"
         label=""
         showLabel={false}
@@ -48,7 +54,7 @@ const gap = 16;
     <!-- Banda -->
     <a href="/projects/banda" class="w-full h-fit flex flex-col gap-[48px]">
       <ImageDisplay
-        src="/work-images/banda/banda1.jpg"
+        src="/work-images/banda/banda1.webp"
         alt="Banda image"
         label=""
         showLabel={false}
@@ -73,7 +79,7 @@ const gap = 16;
     <a href="/projects/relay">
       <div class="w-full h-fit flex flex-col gap-[48px]">
         <ImageDisplay
-          src="/work-images/relay/relay1.jpg"
+          src="/work-images/relay/relay1.webp"
           alt="Relay image"
           label=""
           showLabel={false}
@@ -102,7 +108,7 @@ const gap = 16;
     <a href="/projects/ecvc">
       <div class="w-full h-fit flex flex-col gap-[48px]">
         <ImageDisplay
-          src="/work-images/ecvc/ecvc1.jpg"
+          src="/work-images/ecvc/ecvc1.webp"
           alt="Eyecontact vision care image"
           label=""
           showLabel={false}

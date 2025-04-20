@@ -1,6 +1,6 @@
 ---
 import ArrowDown from "../assets/Icons/ArrowDown.svg";
-
+import { Image } from "astro:assets";
 const { src, alt, label, showSTV } = Astro.props;
 ---
 
@@ -16,7 +16,14 @@ const { src, alt, label, showSTV } = Astro.props;
   <div
     class="img-scroll-container rounded-[4px] w-[268px] md:w-[530px] xl:w-[730px] 2xl:w-[730px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[150px] md:h-[290px] xl:h-[410px] overflow-y-scroll"
   >
-    <img class="w-full h-auto object-cover" src={src} alt={alt} />
+    <!-- <img class="w-full h-auto object-cover" src={src} alt={alt} /> -->
+    <Image
+      src={src}
+      alt={alt}
+      width={730}
+      height={410}
+      class="w-full h-auto object-cover"
+    />
   </div>
 
   {

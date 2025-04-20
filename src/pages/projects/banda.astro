@@ -4,6 +4,10 @@ import ImageDisplay from "../../components/ImageDisplay.astro";
 import BandaSlidePreview1 from "../../components/banda/BandaSlidePreview1.astro";
 const pageTitle = "case study for banda";
 const gap = 16;
+
+// Imported Images
+import Banda1 from "/work-images/banda/banda1.webp";
+import VirgilCandleImage from "/work-images/banda/virgilCandleImage.webp";
 ---
 
 <BaseLayout pageTitle={pageTitle} gap={gap}>
@@ -17,7 +21,7 @@ const gap = 16;
 
   <!-- Main Image -->
   <ImageDisplay
-    src="/work-images/banda/banda1.jpg"
+    src="/work-images/banda/banda1.webp"
     alt="Banda image"
     label=""
     showLabel={false}
@@ -104,7 +108,7 @@ const gap = 16;
         >
       </p>
       <ImageDisplay
-        src="/work-images/banda/virgilCandleImage.jpg"
+        src="/work-images/banda/virgilCandleImage.webp"
         alt="virgil Candle Image"
         label=""
         showLabel={false}
@@ -160,7 +164,8 @@ const gap = 16;
       >
         <img
           class="w-full h-full object-cover"
-          src="/work-images/banda/mobileui1.jpg"
+          src="/work-images/banda/mobileui1.webp"
+          loading="lazy"
           alt="mobileui image"
         />
       </div>
