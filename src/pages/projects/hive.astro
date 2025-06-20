@@ -1,0 +1,241 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ImageDisplay from "../../components/ImageDisplay.astro";
+import HiveSlidePreview1 from "../../components/hive/HiveSlidePreview1.astro";
+import HiveSlidePreview2 from "../../components/hive/HiveSlidePreview2.astro";
+import HiveSlidePreview3 from "../../components/hive/HiveSlidePreview3.astro";
+const pageTitle = "case study for hive";
+const gap = 16;
+---
+
+<BaseLayout pageTitle={pageTitle} gap={gap}>
+  <!-- Header -->
+  <div class="w-full text-[16px]">
+    <p class="italic text-tertiary">2025</p>
+    <h1 class="text-secondary font-mr font-semibold md:text-nowrap">
+      Hive — A simpler way to find, book, rent, or sell property.
+    </h1>
+  </div>
+
+  <!-- Main Image -->
+  <ImageDisplay
+    src="/work-images/hive/hive.webp"
+    alt="Hive image"
+    label=""
+    showLabel={false}
+  />
+
+  <!-- What sparked the idea? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">What sparked the idea?</h2>
+      <p class="text-tertiary">
+        The problem wasn’t a mystery. The signs were everywhere. Friends
+        struggling to find decent rentals. People crowdsourcing agents on
+        WhatsApp. Tweets about broken links and shady fees. So we asked
+        ourselves : Why is finding a place to live in Ghana harder than finding
+        love on a dating app? <br /><br /> Most folks start on Airbnb (big fan of
+        their work) - and sure, that’s fine if you’re planning a weekend getaway
+        or running from your responsibilities. But if you actually want to rent a
+        place, buy a home, or sell a property? Good luck. You’re tossed into a maze
+        of half-baked listings, shady agents spread across different platforms, and
+        fed information that expired back when Harry Potter was trending. <br
+        /><br />
+        I saw a clear gap, started working on a solution and I eventually crossed
+        paths with a few like-minded people who were thinking along the same lines.
+        We teamed up, pooled our brainpower, and Hive was the result. <br /><br
+        /> The vision? Simple: one platform to rule them all. Book a short stay.
+        Rent long-term. Buy. Sell. No app-hopping. No shady agents. No 10 tabs open
+        just to get accurate information on one hotel. Just clean, easy, “I can finally
+        breathe” real estate browsing. <br /><br /> Yeah, other local platforms are
+        out there - but let’s be real: if they were nailing it, this wouldn’t still
+        be a problem. We weren’t trying to reinvent the wheel - just trying to build
+        one that actually turns. We looked to global heavyweights like Rightmove,
+        Opendoor, and PropertyFinder for inspiration, then started mapping out what
+        Hive could be if we did it right.
+      </p>
+    </div>
+  </div>
+
+  <!-- Did you do any research? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">Did you do any research?</h2>
+      <p class="text-tertiary">
+        Yeah - nothing fancy or formal. I talked to people. A few agents, some
+        renters, a couple of sellers, and more than enough friends and
+        acquaintances with “you won’t believe what this agent did” stories. I
+        also poked around the usual local platforms - just to see what worked,
+        and what didn’t. <br /><br /> And while I was at it, I zoomed out. Platforms
+        like Opendoor (great for simplifying the home buying process), Rightmove
+        (UK's rental king), Airbnb (the short-stay standard), and even Zillow and
+        PropertyFinder gave us a bigger picture of what "good" looks like when it
+        comes to clarity, trust, and user-first design. <br /><br /> It turned into
+        a mini SWOT: real strengths, glaring gaps, and a lot of missed opportunities.
+        That gave me just enough clarity to start designing something that actually
+        worked.
+      </p>
+      <div class="flex self-center w-full xl:w-fit mb-[64px]">
+        <HiveSlidePreview1 />
+      </div>
+    </div>
+  </div>
+
+  <!-- What was broken? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">What was broken?</h2>
+      <p class="text-tertiary">
+        The digital local real estate experience was broken at every touchpoint.
+        You’d open most local real estate platforms and immediately wonder if
+        you took a wrong turn into 2012. Basic info was buried or non-existent,
+        listings felt shady or incomplete, bad photos, and the filters? Weirdly
+        specific but still unhelpful. And just when you finally spotted
+        something promising - boom, you get slapped in the face with a wave of
+        banner ads. I’m not “anti-ad”, but come on - even ads should be designed
+        with a little respect for the user. The whole experience didn’t exactly
+        scream “we value your time.” <br /><br /> It felt like most local platforms
+        were designed for the agents, not for actual people - and ironically, agents
+        didn’t even have decent tools either. <br /><br /> Outside Ghana, the bar
+        was just... higher.. Airbnb nailed trust and aesthetics. Opendoor simplified
+        buying. Rightmove made search feel like second nature. Meanwhile here? Users
+        were jumping through hoops just to figure out if a property was real. <br
+        /><br /> Nobody was winning - not renters, not buyers, not agents. What we
+        needed wasn’t more listings. We needed a reset: smarter tools, cleaner design,
+        and a platform that actually felt like it had your back.
+      </p>
+      <div class="flex self-center w-full xl:w-fit mb-[64px]">
+        <HiveSlidePreview2 />
+      </div>
+    </div>
+  </div>
+
+  <!-- How did you approach the design? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">How did you approach the design?</h2>
+      <p class="text-tertiary">
+        I treated this like I was designing for someone’s peace of mind. Real
+        estate already feels like a gamble - the last thing users need is a
+        confusing UI. So I kept it simple, modern, and self explanatory. Less
+        grey boxes, more visual breathing room. Big visuals, bold CTAs, and a
+        structure that felt like "I know where I’m going.” Design wasn’t just
+        about aesthetics - it was about trust, and the right aesthetic plays a
+        big role in that. <br /> After rounds of feedback and several iterations
+        - this is what came out the other side...
+      </p>
+      <div class="flex self-center w-full xl:w-fit mb-[64px]">
+        <HiveSlidePreview3 />
+      </div>
+      <ImageDisplay
+        src="/work-images/hive/hivemobileui.webp"
+        alt="mobile image"
+        label=""
+        showLabel={false}
+      />
+    </div>
+  </div>
+
+  <!-- Why does it matter? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">Why does it matter?</h2>
+      <p class="text-tertiary">
+        Because finding a place to live - even for the weekend - shouldn’t feel
+        like detective work. The way we search for property in Ghana just hasn’t
+        caught up with the way we live now. We order food with a tap, move money
+        in seconds… but finding a rental unit still feels like scrolling through
+        a classifieds board from 2010. <br />
+        <br /> Hive brings that same simple, digital energy we expect everywhere
+        else - but to real estate. Simple design. Less guesswork. More confidence.
+        <br />
+        <br /> On feedback? It came in fast and honest. Early testers got it right
+        away. One person said, “Why don’t we already have this?” Another said, “I’d
+        actually trust this. I won’t have to overanalyze every Jiji property listing”
+        And that’s the point - Hive doesn’t just look modern, it feels trustworthy.
+        Agents were onboard with the idea too - excited by a system that didn’t leave
+        them out of the equation. <br /> Even if this was just a concept, the reaction
+        told us we were on the right track.
+      </p>
+    </div>
+  </div>
+
+  <!-- What did you learn? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">What did you learn?</h2>
+
+      <p class="text-tertiary">
+        That people don’t just want ease - they want certainty. I realized
+        you’re not just designing screens, you’re designing emotional
+        reassurance. So I focused on clear structure, strong copy, and details
+        that signal: this is a place you can trust. <br />
+        <br /> I also got a crash course in balancing complex functionality without
+        letting it turn into a UX maze. Hive had to support booking short stays,
+        renting apartments, and buying homes - all with different user flows, but
+        one unified experience. Each action had to feel tailored, but nothing could
+        feel confusing or out of place. It taught me how to make complex systems
+        feel… simple.
+      </p>
+      <!-- Figma Image -->
+      <ImageDisplay
+        src="/work-images/hive/hivefigma.webp"
+        alt="Figma image"
+        label=""
+        showLabel={false}
+      />
+    </div>
+  </div>
+
+  <!-- What’s next? -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">What’s next?</h2>
+      <p class="text-tertiary">
+        This is just the MVP and we’re just getting started. There’s a lot
+        more to come - smarter search(AI assisted), video/AR walk-throughs and
+        better ways to verify listings. We’re also exploring more ways to
+        build trust into every part of the journey - from discovery to
+        deal-closed. The vision is big, but the goal is simple: make finding
+        property feel a whole lot easier in Ghana and beyond. That’s where
+        this goes next - not just digital real estate, but delightful real
+        estate.
+      </p>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div
+    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
+  >
+    <hr />
+    <div class="flex flex-col gap-[48px]">
+      <h2 class="text-secondary">Links</h2>
+
+      <a target="" href="" class="underline text-primary hover:text-secondary"
+        >Coming Soon</a
+      >
+    </div>
+  </div>
+</BaseLayout>
