@@ -1,0 +1,425 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "Study House Case Study";
+const pageDescription =
+  "Case study for Study House";
+const ogURL = "https://design.richmnn.com/casestudies/studyhouse";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Backstory</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">The Problem</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">What I Built</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>4.</p>
+          <a class="w-full" href="#section4">My Role</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>5.</p>
+          <a class="w-full" href="#section5">Product Thinking & UX Principles</a
+          >
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>6.</p>
+          <a class="w-full" href="#section6">What I Learned</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>7.</p>
+          <a class="w-full" href="#section7">What's Next</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>8.</p>
+          <a class="w-full" href="#section8">See Study House Live</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">Study House Case Study • 3 min Read</h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Backstory -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Backstory</h2>
+        <p class="text-secondary">
+          University felt like a group project no one was managing. Notes were
+          scattered across WhatsApp. Deadlines lived in people’s heads and
+          course materials sat in google Drives only a select few had access to.
+          Years ago this system probably worked, but now? Not so much.
+          <br />
+          <br />
+          There were tools, sure. But none that were well researched, optimized and
+          designed for the specific use case of Ghanaian university students. They
+          either felt too complex, too corporate, or just not in tune with what we
+          actually needed day to day. So I took on the challenge of Study House.
+        </p>
+      </section>
+      <!-- 2. The Problem -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">2. The Problem</h2>
+        <p class="text-secondary">
+          Nothing was technically broken but everything felt like it was
+          designed to suite as many use cases as possible. We were using a
+          patchwork of generic tools including productivity apps built for
+          different audiences, not sleep-deprived students juggling last-minute
+          assignments, group work, campus life, and surprise quizzes during
+          blackout hours. There wasn’t a single system built with an
+          understanding of the Ghanaian university student experience which is
+          the real, unfiltered version. A tool that helped students across
+          Academic & Domestic touchpoints. Hence the challenge then became “How
+          might we build such a system. A tool that solves this specific
+          problem?”
+        </p>
+      </section>
+      <!-- 3. What I Built -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">3. What I Built</h2>
+          <div class="text-secondary">
+            <p>
+              I built Study House. A digital toolkit for Ghanaian university
+              students. It helps students:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>Stay on top of classes.</li>
+              <li>Access notes, past questions, and study guides.</li>
+              <li>Find verified services (like laundry and tutors).</li>
+              <li>Access career tools and services (like job search ).</li>
+              <li>
+                Find and book uni accommodation (hostels, apartments, etc).
+              </li>
+              <li>And so much more.</li>
+            </ul>
+            <p>But how did I get it to what it is now?</p>
+          </div>
+        </div>
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhousedashboard.webp"
+            alt="study house dashboard"
+          />
+        </div>
+        <p class="text-secondary">
+          The Study House Dashboard: The one screen students land on every time.
+          The goal here was to reduce cognitive load and make value obvious in
+          less time.
+        </p>
+      </section>
+      <!-- 4. My Role -->
+      <section
+        id="section4"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">4. My Role</h2>
+          <div class="text-secondary">
+            <p>
+              I led research, UX, UI, copy, prototyping, validation, and full
+              stack development. What I did includes but is not limited to:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>Designing a fully responsive UI system in Figma.</li>
+              <li>
+                Writing code with Astro + Vue & Supabase for speed and
+                flexibility.
+              </li>
+              <li>
+                Writing all microcopy, system flows, and onboarding logic.
+              </li>
+              <li>
+                Validating decisions through direct student feedback loops.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhousefigmapreview.webp"
+            alt="study figma preview"
+          />
+        </div>
+      </section>
+      <!-- 5. Product Thinking & UX Principles -->
+      <section
+        id="section5"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">5. Product Thinking & UX Principles</h2>
+          <div class="text-secondary">
+            <p>
+              This wasn’t a UI-first project. <br />
+              I made the classic mistake of jumping straight into Figma because I’d
+              lived through the problem, and so assumed my experience reflected everyone
+              else’s. <br /> I skipped research at the onset, thinking I already
+              knew what students needed. I wasn’t 100% correct. Eventually, I hit
+              friction and had to pause, go back, and do the research I should’ve
+              started with. What I found corrected my thinking and in some cases
+              validated my earlier assumptions which gave me the greenlight to go
+              on ahead. <br /><br />
+              In essence, this was behavior-first project. I had to respect how students
+              really behaved. Students were stressed, mostly easily distracted, and
+              short on time and design the experience for selected features around
+              that reality, not against it. <br /><br /> So the UX had one job:To
+              get in, get value, and get out.
+
+              <br /><br />
+              The core principles that shaped the design included but are not limited
+              to:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>Cognitive load reduction: one screen, fewer decisions</li>
+              <li>
+                Progressive disclosure: show only what’s needed, when it’s
+                needed
+              </li>
+              <li>Predictable flow: never lost, never confused</li>
+              <li>
+                Contextual Accessibility: offline-ready, fast-loading, and
+                mobile-first.
+              </li>
+            </ul>
+            <p>
+              This wasn’t a “more features = better product” play. It was about
+              saying no and building only what earned its spot. Every
+              interaction was validated with real students. I stripped away
+              complexity, kept what mattered, and optimized for how students
+              think and not how I wish they did which was my mistake in the
+              earlier stages of design.
+              <br />
+              <br />
+              Here’s a look into a few key UX decisions I took during the design
+              process
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>
+            a. Marketing: My process of guiding new students through
+            psychological principles
+          </p>
+          <p>
+            The landing page was structured around user awareness levels.
+            Guiding students from “What is this? and how would it help me” to
+            “Sign me up please”. Each scroll section solves a doubt or builds
+            enough curiosity to nudge them closer to action
+          </p>
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhouseuxstudya.webp"
+            alt="ux study a"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>
+            b. Tools(Quiz App): The process of creating reinforced learning
+            through instant feedback
+          </p>
+          <p>
+            I could’ve given students a bunch of questions and answers and
+            called it aa day. Instead I turned that experience into a Quiz app
+            to reinforce what they learn. The Quiz App design shows them the
+            correct/wrong answer immediately after selecting an option with
+            another option to show an explanation, so the lesson sticks. <br />
+            Furthermore I designed the Quiz app to come in two modes. The timed mode
+            simulates real exams whereas Untimed is for low-pressure practice.
+          </p>
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhouseuxstudyb1.webp"
+            alt="ux study b1"
+          />
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhouseuxstudyb2.webp"
+            alt="ux study b2"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>c. Notes That Stay With You</p>
+          <p>
+            I observed students often took notes while studying, so I added a
+            button to open the notes application in a side tab whenever studying
+            course materials or using educational content on the platform that
+            would’ve required note taking. I did this to reduce context
+            switching and give them a more pleasant experience.
+          </p>
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhouseuxstudyc1.webp"
+            alt="ux study c1"
+          />
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/studyhouse/studyhouseuxstudyc2.webp"
+            alt="ux study c2"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>d. Responsive Across Devices</p>
+          <p>
+            I designed every core experience to feel just as easy-to-use on
+            mobile.
+          </p>
+        </div>
+
+        <p class="text-secondary">
+          I made sure every feature, big or small ,was designed with intention
+          and backed by research on how students behaved.
+        </p>
+      </section>
+      <!-- 6. What I Learned -->
+      <section
+        id="section6"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">6. What I Learned</h2>
+          <ul class="list-disc pl-[20px] text-secondary">
+            <li>
+              Good structure matters because juggling multiple complex features
+              (notes, reminders, jobs, services) while keeping the structure of
+              the interface understandable and coherent can be complex but
+              essential nonetheless.
+            </li>
+            <li>
+              Great UX is invisible, but research always leaves a visible
+              fingerprint.
+            </li>
+            <li>
+              Supabase’s way of doing advocates for consolidation after Kaizen.
+              This was golden advice and I leaned on this during the creation of
+              Study House.
+            </li>
+            <li>
+              Most importantly, I learned to step out of my own bubble. This
+              wasn’t “build it and hope.” It was conversations, tests, critique,
+              and iteration until the thing actually worked.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 7. What’s Next? -->
+      <section
+        id="section7"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">7. What’s Next?</h2>
+          <div class="text-secondary">
+            <p>
+              Study House is far from done. The foundation’s is set but the
+              vision is bigger.
+              <br />
+              <br />
+              We’re exploring:
+            </p>
+            <ul class="list-disc pl-[20px]">
+              <li>AI-generated study plans that adapt to your schedule</li>
+              <li>
+                Better verification for student services (no more scammy flyers)
+              </li>
+              <li>Built-in career prep tools</li>
+              <li>School partnerships to integrate real-time academic data</li>
+              <li>
+                More ways for students to help each other (community tutoring,
+                peer support)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- 8. See study house Live -->
+      <section
+        id="section8"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">8. See study house Live</h2>
+          <p class="text-secondary">Coming Soon</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+

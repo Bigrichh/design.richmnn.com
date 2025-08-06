@@ -1,0 +1,277 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "Relay Case Study";
+const pageDescription =
+  "Case study for Relay";
+const ogURL = "https://design.richmnn.com/casestudies/relay";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Context</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">The Problem</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">My Role</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>4.</p>
+          <a class="w-full" href="#section4">4. Screens / Flows </a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>5.</p>
+          <a class="w-full" href="#section5">Next Steps</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>6.</p>
+          <a class="w-full" href="#section6">Links</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">Relay Case Study • 2 min Read</h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Context -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Context</h2>
+        <p class="text-secondary">
+          Relay was a product I designed In-House for Utopia Tech, a software
+          startup exploring new SaaS verticals in Ghana. They identified a gap
+          in the market and work began on Relay: a bulk SMS tool for helping
+          businesses and individuals handle bulk sms campaigns. My job was to
+          give our UI a more modern feel than legacy competitors through a
+          simplified sser experience and modern look.
+        </p>
+      </section>
+      <!-- 2. The Problem -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">2. The Problem</h2>
+          <div class="text-secondary">
+            <p>The bulk SMS tools on the market had three major issues:</p>
+            <ul class="list-disc pl-[20px]">
+              <li>
+                Clunky workflows: sending a simple campaign took too many steps.
+              </li>
+              <li>
+                Outdated interfaces: they looked (and felt) like Windows 98
+                (Exaggeration).
+              </li>
+              <li>
+                Poor hierarchy: users couldn’t tell where to start or what to
+                do.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-full h-auto rounded-[4px] outline-[2px]">
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relaycomp.webp"
+            alt="relay competitor"
+          />
+        </div>
+        <p class="text-secondary">Competitor Dashboard : Mnotify</p>
+        <div class="w-full h-auto rounded-[4px] outline-[2px]">
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relaydashboard.webp"
+            alt="relay dashboard"
+          />
+        </div>
+        <p class="text-secondary">In-House Solution Dashboard : Relay</p>
+      </section>
+      <!-- 3. My Role -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">3. My Role</h2>
+          <div class="text-secondary">
+            <p>I handled product design. My tasks included:</p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>
+                Conducting competitor research to analyze what current tools
+                lacked.
+              </li>
+              <li>
+                Polishing the entire campaign creation flow for clarity and
+                speed.
+              </li>
+              <li>
+                Designing a modern interface that could scale with multiple
+                clients.
+              </li>
+              <li>
+                Creating high-fidelity designs for web, working closely with
+                devs.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relayfigmapreview.webp"
+            alt="relay figma preview"
+          />
+        </div>
+      </section>
+      <!-- 4. Screens / Flows -->
+      <section
+        id="section4"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">4. Screens / Flows</h2>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>Navigation</p>
+          <p>
+            I stripped the navigation down to only the most essential actions:
+            Dashboard, Contacts, Send SMS, Recharge, and Help ensuring users
+            could access their entire workflow with minimal friction. I also
+            introduced a "Switch Service" function in the nav to accommodate the
+            company’s roadmap to support SMS, Voice, and Email under a unified
+            platform.
+          </p>
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relaynav.webp"
+            alt="relay nav"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>Dashboard</p>
+          <p>
+            Instead of overwhelming users with stats, I prioritized recent
+            campaigns and status indicators so you could glance and go.
+          </p>
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relaydash.webp"
+            alt="relay dashboard"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>Recharge SMS</p>
+          <p>
+            I treated recharging SMS like a SaaS subscription showing volume
+            tiers, cost breakdowns, and helpful nudges around usage so teams
+            could make better purchase decisions.
+          </p>
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relayrechargesms.webp"
+            alt="relay recharge sms"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>Send SMS</p>
+          <p>
+            Message composition, segmentation, and delivery timing all live in a
+            well organized, easy to navigate interface
+          </p>
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/relay/relaysendsms.webp"
+            alt="relay send sms"
+          />
+        </div>
+      </section>
+      <!-- 5. Next Steps -->
+      <section
+        id="section5"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">5. Next Steps</h2>
+          <p class="text-secondary">
+            The product hasn’t launched yet, but the design foundation is
+            built to scale not just visually but structurally. We’ve laid the
+            groundwork for future channels like voice and email, without
+            complicating the current SMS flow. Once live, the goal is to
+            onboard internal teams first, then extend to external clients and
+            I’m confident the clarity of the experience will speak for itself.
+          </p>
+        </div>
+      </section>
+      <!-- 6. Links -->
+      <section
+        id="section6"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">6. Links</h2>
+          <div class="text-secondary">
+            <p>Send me an email. I'll share a link to the prototype. Cheers.</p>
+            <a
+              class="hover:text-primary hover:!underline"
+              href="mailto:richmanaddai@gmail.com">richmanaddai@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,14 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Filter from "../assets/Icons/Filter.svg";
 
 const pageTitle = "Blog";
 const pageDescription =
-  "Richmann's blog - A sandbox of thoughts, lessons, and experiments";
+  "Richmann - Design Engineer - designing clean, thouhtful user experiences and building the tech bringing those experiences to life.";
 const ogURL = "https://design.richmnn.com/blog";
 const keywords =
-  "Richmann Addai, product design blog, UX design, UI/UX insights, design process, design systems, web development, creative thinking, case studies, design career, software design";
-const gap = 16;
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
 ---
 
 <BaseLayout
@@ -16,46 +14,28 @@ const gap = 16;
   pageDescription={pageDescription}
   ogURL={ogURL}
   keywords={keywords}
-  gap={gap}
 >
-  <!-- Header -->
-  <div class="w-full text-[16px]">
-    <p class="italic text-tertiary">Learning out loud - Coming Soon</p>
-    <h1 class="text-primary font-mr font-semibold">
-      A sandbox of thoughts, lessons, and experiments
-    </h1>
-  </div>
-
-  <!-- change hidden to flex when you're ready to show the blog -->
-  <div class="hidden flex-col gap-[48px] w-full">
-    <div class="flex w-full justify-end">
-      <button
-        class="w-fit flex items-center gap-[8px] text-secondary text-[12px] font-mr"
-      >
-        <p>filter</p>
-        <Filter />
-      </button>
+  <div slot="secondColumn">
+    <!-- Second Column (Brief Intro Text) -->
+    <div class="w-full">
+      <p class="w-full text-primary">
+        Here, you’ll find documented systems, principles, and decisions behind
+        the work I do and not just the outcomes. <br />
+        <br />
+        Writing helps me distill ideas, challenge assumptions, and leave a trail
+        others can follow. If you build things, lead teams, or care about craft,
+        there’s likely something here for you.
+      </p>
     </div>
-
-    <!-- What i'm learning -->
-    <div class="w-full flex flex-col gap-[12px] font-mr font-semibold">
-      <div class="flex flex-col gap-[6px]">
-        <h2 class="text-[14px] text-secondary">
-          What I’m Learning → “Notes from the field”
-        </h2>
-        <p class="text-tertiary text-[12px]">
-          Design growth, self-teaching, and reflections from behind the screens
-        </p>
-      </div>
-      <hr />
-      <div class="flex flex-col gap-[12px]">
-        <div class="w-full flex justify-between">
-          <p class="text-secondary text-[14px]">
-            1. Design isn’t hard. Thinking clearly is.
-          </p>
-          <p class="text-tertiary text-[12px]">16 - 04 - 25</p>
-        </div>
-        <hr />
+  </div>
+  <div slot="thirdColumn">
+    <!-- Third column (list of blog posts-->
+    <div class="w-full">
+      <!-- Coming Soon Flag -->
+      <div
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">Thoughts are turning into sentences. Almost ready to share. Coming Soon</h2>
       </div>
     </div>
   </div>

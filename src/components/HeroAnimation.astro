@@ -1,0 +1,212 @@
+---
+import Pointer from "../assets/icons/pointer.svg";
+---
+
+<div
+  id="image-container"
+  class="transform scale-35 md:scale-70 lg:scale-100 w-[968px] h-[450px] relative flex items-center mt-[-150px] md:mt-[-50px] lg:mt-0"
+>
+  <!-- Left Image -->
+  <div
+    id="left-img"
+    class="image mr-[-16px] w-[350px] h-[300px] rounded-[64px] overflow-hidden transform rotate-[-20deg]"
+  >
+    <img
+      class="size-full object-cover"
+      src="/images/workspace.webp"
+      alt="Richmann's Image"
+    />
+  </div>
+  <!-- Center Image -->
+  <div
+    id="center-img"
+    class="image w-[300px] h-[450px] rounded-[64px] overflow-hidden z-10"
+  >
+    <img
+      class="size-full object-cover"
+      src="/images/richmnn.webp"
+      alt="Richmann's Image"
+    />
+  </div>
+  <!-- Right Image -->
+  <div
+    id="right-img"
+    class="image ml-[-16px] w-[350px] h-[300px] rounded-[64px] overflow-hidden transform rotate-[20deg]"
+  >
+    <img
+      class="size-full object-cover"
+      src="/images/figma.webp"
+      alt="Richmann's Image"
+    />
+  </div>
+  <!-- Pointer -->
+  <div id="pointer" class="absolute top-0 left-0 z-20 pointer">
+    <Pointer />
+  </div>
+</div>
+
+<!-- Script to handle animation -->
+<script is:inline>
+  // Utility function: pause execution for a given number of milliseconds
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  // Get reference to the animated pointer and the container holding the images
+  const pointer = document.getElementById("pointer");
+  const container = document.getElementById("image-container");
+
+  // Get references to each of the three image elements
+  const left = document.getElementById("left-img");
+  const center = document.getElementById("center-img");
+  const right = document.getElementById("right-img");
+
+  // Array of image elements in order of animation
+  // `center` is repeated at the end to create a smooth loop
+  const IMAGES = [left, center, right, center];
+
+  /**
+   * Move the pointer to visually "point at" the target image.
+   * The math ensures the pointer's tip aligns with the bottom-center of the target image.
+   */
+  const movePointerTo = (el) => {
+    // Get the bounding box of the image
+    const rect = el.getBoundingClientRect();
+    // Get the bounding box of the container that holds both the pointer and the images
+    const containerRect = container.getBoundingClientRect();
+
+    let scaleFactor;
+
+    if (window.innerWidth > 1024) {
+      // Desktop — scale-[1]
+      scaleFactor = 1;
+    } else if (window.innerWidth > 640) {
+      // Small tablets / large phones — scale-[0.7]
+      scaleFactor = 0.7;
+    } else {
+      // Mobile — scale-[0.35]
+      scaleFactor = 0.35;
+    }
+
+    // ------------------ Position Calculations ------------------
+
+    // Step 1: Calculate the **center X** of the hovered element
+    // Subtract container's left offset to make it relative to container
+    // Divide by scale to account for the element being scaled down
+    const pointerX =
+      (rect.left - containerRect.left + rect.width / 2) / scaleFactor;
+    // Step 2: Calculate the **bottom Y** of the hovered element
+    // Same container-relative logic and scale adjustment
+    const pointerY = (rect.top - containerRect.top + rect.height) / scaleFactor;
+
+    // Step 3: Apply a consistent offset so the pointer tip doesn’t sit directly at bottom-center
+    // These numbers (300, 500) are "visual fudge factors" — tweak as needed
+    const finalX = pointerX - 300;
+    const finalY = pointerY - 500;
+
+    // Step 4: Move the pointer via transform — no animation code needed if it's already handled via CSS
+    pointer.style.transform = `translate(${finalX}px, ${finalY}px)`;
+
+    // | Concept                          | What it's doing                            |
+    // | -------------------------------- | ------------------------------------------ |
+    // | `rect.left - containerRect.left` | Makes position **relative to container**   |
+    // | `+ rect.width / 2`               | Centers on hovered element                 |
+    // | `/ scaleFactor`                  | Undoes the effect of `scale-*` in Tailwind |
+    // | `- 300 / - 500`                  | Fine-tunes the pointer placement visually  |
+  };
+
+  /**
+   * Simulates a pointer "click" animation by briefly adding a class,
+   * then removing it shortly after to reset the state.
+   */
+  const clickPointer = async () => {
+    pointer.classList.add("clicking");
+    await sleep(65);
+    pointer.classList.remove("clicking");
+  };
+
+  /**
+   * Updates the visual state of all images.
+   * Only the clicked (currently active) image gets the 'clicked' class.
+   * All others get the 'unclicked' class.
+   */
+  const updateImageStates = (clickedEl) => {
+    [left, center, right].forEach((el) => {
+      if (el === clickedEl) {
+        el.classList.remove("unclicked");
+        el.classList.add("clicked");
+      } else {
+        el.classList.remove("clicked");
+        el.classList.add("unclicked");
+      }
+    });
+  };
+
+  /**
+   * Core loop to animate the pointer:
+   * - Every few seconds, the pointer moves to the next image,
+   * - Simulates a click,
+   * - Updates the visual state of images.
+   */
+  const startAnimation = async () => {
+    let i = 0; // Start at the first image
+    while (true) {
+      const target = IMAGES[i % IMAGES.length]; // Loop through images using modulo
+
+      await sleep(2000); // Wait before moving to the next image
+      movePointerTo(target); // Move pointer to current image
+      await sleep(850); // Pause for dramatic effect
+      await clickPointer(); // Simulate a click
+      await sleep(80); // Slight pause after clicking
+      updateImageStates(target); // Highlight the clicked image
+      await sleep(850); // Wait before the next cycle
+      i++; // Move to the next image in the loop
+    }
+  };
+
+  /**
+   * On page load:
+   * - Move pointer to the center image as the starting point.
+   * - Start the animation loop.
+   */
+  window.addEventListener("DOMContentLoaded", () => {
+    movePointerTo(center); // Position pointer initially
+    startAnimation(); // Begin Looping animation
+  });
+</script>
+
+<style is:global>
+  /* -------------------------------
+     GENERAL IMAGE STYLES
+  ---------------------------------*/
+  /* Adds border and transition effects to images */
+  .image {
+    border: 1.5px solid var(--color-bdprimary);
+    transition:
+      width 0.8s ease-in-out,
+      height 0.8s ease-in-out;
+  }
+  /* When image is clicked, shrink to portrait size */
+  .clicked {
+    width: 300px;
+    height: 450px;
+  }
+  /* Unclicked image state */
+  .unclicked {
+    width: 350px;
+    height: 300px;
+  }
+
+  /* -------------------------------
+     POINTER ANIMATION
+  ---------------------------------*/
+  /* Pointer container with scaling transition */
+  .pointer {
+    width: 800px;
+    height: 800px;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  /* Shrinks the pointer dramatically when clicked */
+  .pointer.clicking {
+    transform: scale(0.1) !important;
+  }
+</style>

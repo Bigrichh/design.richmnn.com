@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "Eyecontact Vision Care Case Study";
+const pageDescription =
+  "Case study for Eyecontact Vision Care";
+const ogURL = "https://design.richmnn.com/casestudies/ecvc";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Overview</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">Summary</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">Old Interface</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>4.</p>
+          <a class="w-full" href="#section4">Redesigned Interface</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>5.</p>
+          <a class="w-full" href="#section5">See Live</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">
+          EyeContact Vision Care • Visual Case Study • 1 min Read
+        </h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Overview -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Overview</h2>
+        <p class="text-secondary">
+          Role : Web Designer
+          <br />
+          Type : Freelance
+          <br />
+          Year : 2023
+          <br />
+          Scope: Web design, E-commerce Experience, Brand
+        </p>
+      </section>
+      <!-- 2. Summary -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">2. Summary</h2>
+        <p class="text-secondary">
+          EyeContact is one of Kumasi’s most trusted optometry brands, known for
+          its premium in-person experience. But their old website didn’t reflect
+          that quality. I was brought in to redesign their digital presence to
+          match the care and professionalism people already knew them for in
+          real life.
+          <br />
+          <br />
+          This was a freelance project where I handled the full redesign from structure
+          and flow to final UI and interactions.
+        </p>
+      </section>
+
+      <!-- 3. Old Interface  -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">3. Old Interface</h2>
+        <p class="text-secondary">Shop</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcold1.webp"
+            alt="ecvc old 1"
+          />
+        </div>
+      </section>
+      <!-- 4. Redesigned Interface  -->
+      <section
+        id="section4"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">4. Redesigned Interface</h2>
+        <p class="text-secondary">About Us</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcaboutus.webp"
+            alt="ecvc about us"
+          />
+        </div>
+
+        <p class="text-secondary">Store</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcstore.webp"
+            alt="ecvc store"
+          />
+        </div>
+
+        <p class="text-secondary">Product Details</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcproductdetails.webp"
+            alt="ecvc product details"
+          />
+        </div>
+
+        <p class="text-secondary">Cart</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvccart.webp"
+            alt="ecvc cart"
+          />
+        </div>
+
+        <p class="text-secondary">Checkout</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvccheckout.webp"
+            alt="ecvc checkout"
+          />
+        </div>
+
+        <p class="text-secondary">Blog</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcblog.webp"
+            alt="ecvc blog"
+          />
+        </div>
+
+        <p class="text-secondary">Contact</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvccontact.webp"
+            alt="ecvc contact"
+          />
+        </div>
+
+        <p class="text-secondary">CMS - Dashboard</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvccms.webp"
+            alt="ecvc cms"
+          />
+        </div>
+
+        <p class="text-secondary">Mobile Versions</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/ecvc/ecvcmobileui.webp"
+            alt="ecvc mobile versions"
+          />
+        </div>
+
+        <p class="text-secondary">
+          A great health brand earns trust before the first appointment. This
+          redesign brought EyeContact’s online presence up to the level of their
+          real-world care: focused, premium, and distinctly theirs.
+        </p>
+      </section>
+      <!-- 5. See Live  -->
+      <section
+        id="section5"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">5. See Live</h2>
+        <a
+          href="https://www.eyecontactvisioncare.com/"
+          target="_blank"
+          class="text-secondary hover:text-primary hover:!underline"
+          >See Eyecontact Vision Care Live</a
+        >
+      </section>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+import ArrowRight from "../assets/icons/arrow-right.svg";
+
+const { title, img, desc, scope } = Astro.props;
+---
+
+<div
+  class="project-card w-full flex flex-col gap-[64px] p-[32px] pb-[64px] rounded-[4px] overflow-clip bg-bgprimary"
+>
+  <div class="w-full h-auto rounded-[4px] overflow-clip img relative">
+    <img class="size-full object-cover" src={img} alt={title} />
+    <div
+      class="img-overlay w-full h-full rounded-[4px] absolute top-0 left-0 bg-bgprimary/80 flex items-center justify-center"
+    >
+      <div class="flex items-center gap-[8px] text-[14px] text-primary">
+        <p>VIEW CASE STUDY</p>
+        <p>[</p>
+        <div>
+          <ArrowRight />
+        </div>
+        <p>]</p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex flex-col gap-[16px]">
+    <h2 class="text-primary">{title}</h2>
+    <p class="text-secondary">{desc}</p>
+    <p class="text-secondary">{scope}</p>
+  </div>
+</div>
+
+<style>
+  .img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .project-card:hover .img-overlay {
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,1013 @@
+---
+import ChevronDown from "../assets/icons/chevron-down.svg";
+import Disc from "../assets/icons/disc.svg";
+import Next from "../assets/icons/next.svg";
+import Previous from "../assets/icons/previous.svg";
+---
+
+<div
+  class="w-full p-[8px] flex flex-col gap-[16px] border-[1px] border-bdprimary"
+>
+  <!-- Top row: Song info + control buttons -->
+  <div class="flex items-center justify-between">
+    <!-- Track Info Section (scrolls if too long) -->
+    <div
+      id="track-info2"
+      class="w-[72px] overflow-clip flex flex-col gap-[4px]"
+    >
+      <!-- Track Title -->
+      <div class="marquee-wrapper w-full">
+        <p id="track-title2" class="text-primary text-nowrap marquee">
+          Track Name
+        </p>
+      </div>
+      <!-- Artist Name -->
+      <div class="marquee-wrapper w-full">
+        <p id="track-artist2" class="text-secondary text-nowrap marquee">
+          Artist
+        </p>
+      </div>
+    </div>
+
+    <!-- Previous / Play (disc) / Next Buttons -->
+    <div class="flex items-center gap-[8px]">
+      <!-- Previous Button -->
+      <Previous id="prev-btn2" class="hover:opacity-80 hover:cursor-pointer" />
+      <!-- Disc with embedded Play Button -->
+      <div id="disc2" class="disc" title="Click to play a song">
+        <Disc id="play-btn2" />
+      </div>
+      <!-- Next Button -->
+      <Next id="next-btn2" class="hover:opacity-80 hover:cursor-pointer" />
+    </div>
+    <!-- Hidden audio element (controls music) -->
+    <audio id="audio2" preload="metadata" hidden>
+      <source src="" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Bottom row : Genre Dropdwon ( Select genere to play music from) -->
+  <div class="relative inline-block w-full">
+    <select
+      id="genre-select2"
+      class="block w-full appearance-none bg-black text-primary focus:outline-none p-[8px] hover:outline-[1px] hover:outline-primary"
+    >
+      <!-- List of music genres -->
+      <option value="piano">Piano</option>
+      <option value="afrobeats">AfroBeats</option>
+      <option value="rnb">RnB</option>
+      <option value="hiphop">HipHop</option>
+      <option value="house">House Music</option>
+      <option value="ukrap">UK Rap</option>
+      <option value="hilife">HiLife</option>
+    </select>
+
+    <!-- Custom arrow icon on the right side of select -->
+    <div
+      class="pointer-events-none absolute inset-y-0 right-[8px] flex items-center text-white"
+    >
+      <ChevronDown />
+    </div>
+  </div>
+</div>
+
+<!-- Script to handle music player -->
+<script is:inline>
+  // 1. Define your genre-to-track mapping
+  // Each genre contains an array of track objects with title, artist, and file path
+  const tracks2 = {
+    afrobeats: [
+      {
+        title: "Spend Some Time",
+        artist: "Amaarae ft. Wande Coal",
+        url: "/music/afrobeats/01SpendSomeTime.mp3",
+      },
+      {
+        title: "Blessing",
+        artist: "Runtown",
+        url: "/music/afrobeats/02Blessing.mp3",
+      },
+      {
+        title: "Rollercoaster",
+        artist: "Burna Boy ft. J. Balvin",
+        url: "/music/afrobeats/03Rollercoaster.mp3",
+      },
+      {
+        title: "Soke",
+        artist: "Burna Boy",
+        url: "/music/afrobeats/04Soke.mp3",
+      },
+      {
+        title: "Venus",
+        artist: "Faceless ft. Serotonin ",
+        url: "/music/afrobeats/05Venus.mp3",
+      },
+      {
+        title: "Compromise",
+        artist: "Fireboy DML ft. Rema",
+        url: "/music/afrobeats/06Compromise.mp3",
+      },
+      {
+        title: "High Spirit",
+        artist: "Runtown",
+        url: "/music/afrobeats/07HighSpirit.mp3",
+      },
+      {
+        title: "Timing",
+        artist: "Juls ft. Black Sherif & Projexx",
+        url: "/music/afrobeats/08Timing.mp3",
+      },
+      {
+        title: "Mad Over You",
+        artist: "Runtown",
+        url: "/music/afrobeats/09MadOverYou.mp3",
+      },
+      {
+        title: "Energy",
+        artist: "Skepta & Wizkid",
+        url: "/music/afrobeats/10Energy.mp3",
+      },
+      {
+        title: "Soweto",
+        artist: "Kabusa Oriental Choir",
+        url: "/music/afrobeats/11Soweto.mp3",
+      },
+      {
+        title: "Electric",
+        artist: "StarBoy ft. Wizkid & London",
+        url: "/music/afrobeats/12Electric.mp3",
+      },
+      {
+        title: "Uncle Pele",
+        artist: "Dxtiny",
+        url: "/music/afrobeats/13UnclePele.mp3",
+      },
+    ],
+    hilife: [
+      {
+        title: "Alunamehlo",
+        artist: "Digital Sangoma",
+        url: "/music/hilife/01Alunamehlo.mp3",
+      },
+      {
+        title: "Buga",
+        artist: "Show Dem Camp, The Cavemen. & Nsikak David ft. Tim Lyre",
+        url: "/music/hilife/02Buga.mp3",
+      },
+      {
+        title: "Azana",
+        artist: "The Cavemen ft. PC Lapez",
+        url: "/music/hilife/03Azana.mp3",
+      },
+      {
+        title: "Love and Trials",
+        artist: "The Cavemen",
+        url: "/music/hilife/04LoveAndTrials.mp3",
+      },
+      {
+        title: "Selense",
+        artist: "The Cavemen",
+        url: "/music/hilife/05Selense.mp3",
+      },
+      {
+        title: "Good People",
+        artist: "The Cavemen",
+        url: "/music/hilife/06GoodPeople.mp3",
+      },
+      {
+        title: "Beautiful Rain",
+        artist: "The Cavemen",
+        url: "/music/hilife/07BeautifulRain.mp3",
+      },
+      {
+        title: "Fall",
+        artist: "The Cavemen",
+        url: "/music/hilife/08Fall.mp3",
+      },
+      {
+        title: "Iro",
+        artist: "The Cavemen",
+        url: "/music/hilife/09Író.mp3",
+      },
+      {
+        title: "Opportunity",
+        artist: "The Cavemen",
+        url: "/music/hilife/10Opportunity.mp3",
+      },
+      {
+        title: "Osundu",
+        artist: "The Cavemen",
+        url: "/music/hilife/11Osundu.mp3",
+      },
+      {
+        title: "Who No Know Go Know",
+        artist: "The Cavemen",
+        url: "/music/hilife/12WhoNoKnowGoKnow.mp3",
+      },
+    ],
+    hiphop: [
+      {
+        title: "Funny Seing you here",
+        artist: "Jack Harlow",
+        url: "/music/hiphop/01FunnySeeingYouHere.mp3",
+      },
+      {
+        title: "Psycho",
+        artist: "Post Malone ft. Ty Dolla $ign",
+        url: "/music/hiphop/02Psycho.mp3",
+      },
+      {
+        title: "Yosemite",
+        artist: "Travis Scott ft. Gunna & Nav",
+        url: "/music/hiphop/03Yosemite.mp3",
+      },
+      {
+        title: "Drew A Picasso",
+        artist: "Drake",
+        url: "/music/hiphop/04DrewAPicasso.mp3",
+      },
+      {
+        title: "From Chi To Saint Mary",
+        artist: "Millkzy",
+        url: "/music/hiphop/05FromChiToSaintMary.mp3",
+      },
+      {
+        title: "Middle Child",
+        artist: "J. Cole",
+        url: "/music/hiphop/06MiddleChild.mp3",
+      },
+      {
+        title: "Caged Bird",
+        artist: "J. Cole ft. Omen",
+        url: "/music/hiphop/07CagedBird.mp3",
+      },
+      {
+        title: "Javari",
+        artist: "J. Cole",
+        url: "/music/hiphop/08Javari.mp3",
+      },
+      {
+        title: "Head High",
+        artist: "Joey Bada$$",
+        url: "/music/hiphop/09HeadHigh.mp3",
+      },
+      {
+        title: "Show Me",
+        artist: "Joey Bada$$",
+        url: "/music/hiphop/10ShowMe.mp3",
+      },
+      {
+        title: "Champion",
+        artist: "Kanye West",
+        url: "/music/hiphop/11Champion.mp3",
+      },
+      {
+        title: "I Wonder",
+        artist: "Kanye West",
+        url: "/music/hiphop/12IWonder.mp3",
+      },
+      {
+        title: "Flashing Lights",
+        artist: "Kanye West",
+        url: "/music/hiphop/13FlashingLights.mp3",
+      },
+      {
+        title: "Karuna",
+        artist: "Malz Monday",
+        url: "/music/hiphop/14Karuna.mp3",
+      },
+      {
+        title: "Love Yourz",
+        artist: "J. Cole",
+        url: "/music/hiphop/15LoveYourz.mp3",
+      },
+      {
+        title: "Know Yourself",
+        artist: "Nasty C",
+        url: "/music/hiphop/16KnowYourself.mp3",
+      },
+      {
+        title: "Port Antonia",
+        artist: "J. Cole",
+        url: "/music/hiphop/17PortAntonia.mp3",
+      },
+      {
+        title: "Same",
+        artist: "AJ McQueen",
+        url: "/music/hiphop/18Same.mp3",
+      },
+      {
+        title: "Set Intentions",
+        artist: "AJ McQueen",
+        url: "/music/hiphop/19SetIntentions.mp3",
+      },
+      {
+        title: "Sit Yuh Self Down",
+        artist: "AJ McQueen, Londrelle",
+        url: "/music/hiphop/20SitYuhSelfDown.mp3",
+      },
+    ],
+    house: [
+      {
+        title: "Move",
+        artist: "Adam Port, Stryv, Keinemusik ft. Malachiii",
+        url: "/music/house/01Move.mp3",
+      },
+      {
+        title: "Never Walk Alone",
+        artist: "Blond:ish & Steve Appleton",
+        url: "/music/house/02NeverWalkAlone.mp3",
+      },
+      {
+        title: "Middle",
+        artist: "DJ Snake ft. Bipolar Sunshine",
+        url: "/music/house/03Middle.mp3",
+      },
+      {
+        title: "We Could Be Love",
+        artist: "Hayden James & ARCO",
+        url: "/music/house/04WeCouldBeLove.mp3",
+      },
+      {
+        title: "I Adore You",
+        artist: "Hugel, Topic, Arash ft. Daelcom",
+        url: "/music/house/05IAdoreYou.mp3",
+      },
+      {
+        title: "Where You Are",
+        artist: "John Summit & Hayla",
+        url: "/music/house/06WhereYouAre.mp3",
+      },
+      {
+        title: "Intimidated",
+        artist: "Kaytranada ft. H.E.R.",
+        url: "/music/house/07Intimidated.mp3",
+      },
+      {
+        title: "Black Friday(Pretty Like The Sun)",
+        artist: "Lost Frequencies & Tom Odell",
+        url: "/music/house/08BlackFriday.mp3",
+      },
+      {
+        title: "It's That Time(FISHER Remix)",
+        artist: "Marlon Hoffstadt",
+        url: "/music/house/09ItsThatTime.mp3",
+      },
+      {
+        title: "Bandolera",
+        artist: "MDP & Max Bering",
+        url: "/music/house/10Bandolera.mp3",
+      },
+      {
+        title: "Lady Love",
+        artist: "Oden & Fatzo x Camden Cox",
+        url: "/music/house/11LadyLove.mp3",
+      },
+      {
+        title: "Pick Up The Phone",
+        artist: "Pawsa ft. Nate Dogg",
+        url: "/music/house/12PickUpThePhone.mp3",
+      },
+      {
+        title: "(It Goes Like) Nanana (Edit)",
+        artist: "Peggy Gou",
+        url: "/music/house/13ItGoesLikeNananaEdit.mp3",
+      },
+      {
+        title: "Don't Stop",
+        artist: "Prospa",
+        url: "/music/house/14DontStop.mp3",
+      },
+      {
+        title: "This Rhythmn",
+        artist: "Prospa ft. RAHH",
+        url: "/music/house/15ThisRhythmn.mp3",
+      },
+      {
+        title: "Lola's Theme (Radio Edit)",
+        artist: "The Shapeshifters",
+        url: "/music/house/16LolasThemeRadioEdit.mp3",
+      },
+    ],
+    piano: [
+      {
+        title: "Sundays(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/01SundaysJustPianoVersion.mp3",
+      },
+      {
+        title: "Last Hour(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/02LastHourJustPianoVersion.mp3",
+      },
+      {
+        title: "Anthem(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/03AnthemJustPianoVersion.mp3",
+      },
+      {
+        title: "G.F.(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/04GFJustPianoVersion.mp3",
+      },
+      {
+        title: "Cashew(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/05CashewJustPianoVersion.mp3",
+      },
+      {
+        title: "Meeting Again In The Void(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/06MeetingAgainInTheVoidJustPianoVersion.mp3",
+      },
+      {
+        title: "Fée(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/07FéeJustPianoVersion.mp3",
+      },
+      {
+        title: "Pe(Just Piano Version)",
+        artist: "FKJ",
+        url: "/music/piano/08PeJustPianoVersion.mp3",
+      },
+    ],
+    rnb: [
+      {
+        title: "Blue Dream",
+        artist: "Jhene Aiko",
+        url: "/music/rnb/01BlueDream.mp3",
+      },
+      {
+        title: "ICU",
+        artist: "Coco Jones",
+        url: "/music/rnb/02ICU.mp3",
+      },
+      {
+        title: "Scream (James Blake Cover)",
+        artist: "Daniel Caesar",
+        url: "/music/rnb/03ScreamJamesBlakeCover.mp3",
+      },
+      {
+        title: "Boo'd Up",
+        artist: "Ella Mai",
+        url: "/music/rnb/04BoodUp.mp3",
+      },
+      {
+        title: "Crystal's Tears",
+        artist: "Elmiene",
+        url: "/music/rnb/05CrystalsTears.mp3",
+      },
+      {
+        title: "Eternal Light",
+        artist: "Free Nationals & Chronixx",
+        url: "/music/rnb/06EternalLight.mp3",
+      },
+      {
+        title: "Motion",
+        artist: "Khalid",
+        url: "/music/rnb/07Motion.mp3",
+      },
+      {
+        title: "Know That You Are Loved",
+        artist: "Cleo Soul",
+        url: "/music/rnb/08KnowThatYouAreLoved.mp3",
+      },
+      {
+        title: "Try(A COLORS SHOW)",
+        artist: "Madison McFerrin",
+        url: "/music/rnb/09TryAColorsShow.mp3",
+      },
+      {
+        title: "Blame U",
+        artist: "Odeal",
+        url: "/music/rnb/10BlameU.mp3",
+      },
+      {
+        title: "Pressure",
+        artist: "Orion Sun",
+        url: "/music/rnb/11Pressure.mp3",
+      },
+      {
+        title: "Do 4 Love",
+        artist: "Snoh Aalegra",
+        url: "/music/rnb/12Do4Love.mp3",
+      },
+      {
+        title: "So Into You",
+        artist: "Tamia",
+        url: "/music/rnb/13SoIntoYou.mp3",
+      },
+      {
+        title: "CPR",
+        artist: "Summer Walker",
+        url: "/music/rnb/14CPR.mp3",
+      },
+      {
+        title: "Free Fall",
+        artist: "Tems ft. J. Cole",
+        url: "/music/rnb/15FreeFall.mp3",
+      },
+      {
+        title: "These Days",
+        artist: "Tems",
+        url: "/music/rnb/16TheseDays.mp3",
+      },
+      {
+        title: "Higher",
+        artist: "Tems",
+        url: "/music/rnb/17Higher.mp3",
+      },
+      {
+        title: "Thinkin Bout You",
+        artist: "Frank Ocean",
+        url: "/music/rnb/18ThinkinBoutYou.mp3",
+      },
+      {
+        title: "Let Me Grow",
+        artist: "ThreeTwenty",
+        url: "/music/rnb/19LetMeGrow.mp3",
+      },
+      {
+        title: "The Light(I Need You)",
+        artist: "ThreeTwenty",
+        url: "/music/rnb/20TheLightINeedYou.mp3",
+      },
+      {
+        title: "June's Cry",
+        artist: "Venna ft. emil, JADA, JVCK JAMES",
+        url: "/music/rnb/21JunesCry.mp3",
+      },
+      {
+        title: "Hey(Extended Mix)",
+        artist: "We Are KING",
+        url: "/music/rnb/22HеyExtendedMix.mp3",
+      },
+    ],
+    ukrap: [
+      {
+        title: "Standard",
+        artist: "Venna, Knucks",
+        url: "/music/ukrap/01Standard.mp3",
+      },
+      {
+        title: "4 Life",
+        artist: "Tion Wayne ft. Afro B",
+        url: "/music/ukrap/02ForLife.mp3",
+      },
+      {
+        title: "Easy",
+        artist: "Avelino ft. Krept",
+        url: "/music/ukrap/03Easy.mp3",
+      },
+      {
+        title: "Blessing",
+        artist: "Knucks",
+        url: "/music/ukrap/04Blessing.mp3",
+      },
+      {
+        title: "Tension",
+        artist: "Central Cee",
+        url: "/music/ukrap/05Tension.mp3",
+      },
+      {
+        title: "Day In The Life",
+        artist: "Central Cee",
+        url: "/music/ukrap/06DayInTheLife.mp3",
+      },
+      {
+        title: "Law Of Attraction ",
+        artist: "Dave",
+        url: "/music/ukrap/07LawOfAttraction.mp3",
+      },
+      {
+        title: "Nice Body",
+        artist: "J Hus ft. Jorja Smith",
+        url: "/music/ukrap/08NiceBody.mp3",
+      },
+      {
+        title: "Alpha House",
+        artist: "Knucks, Venna",
+        url: "/music/ukrap/09AlphaHouse.mp3",
+      },
+      {
+        title: "DND",
+        artist: "Nemzzz",
+        url: "/music/ukrap/10DND.mp3",
+      },
+      {
+        title: "PTSD",
+        artist: "Nemzzz",
+        url: "/music/ukrap/11PTSD.mp3",
+      },
+      {
+        title: "Purple Heart",
+        artist: "Dave",
+        url: "/music/ukrap/12PurpleHeart.mp3",
+      },
+      {
+        title: "Champagne Shots",
+        artist: "Sainte",
+        url: "/music/ukrap/13ChampagneShots.mp3",
+      },
+      {
+        title: "Make It Out",
+        artist: "Tion Wayne",
+        url: "/music/ukrap/14MakeItOut.mp3",
+      },
+      {
+        title: "More Money",
+        artist: "Tion Wayne",
+        url: "/music/ukrap/15MoreMoney.mp3",
+      },
+    ],
+  };
+
+  // This object will store a *shuffled playlist* (queue) for each genre.
+  // For example: shuffleQueues["piano"] = [trackA, trackB, trackC...]
+  const shuffleQueues2 = {};
+  // This object will store a *shuffled playlist* (queue) for each genre.
+  // For example: shuffleQueues["piano"] = [trackA, trackB, trackC...]
+  const currentTrackState2 = {
+    genre: "piano", // Default genre on load
+    index: 0, // Start at the first track in the queue
+  };
+
+  // ========================================
+  // Grab references to DOM elements (HTML)
+  // ========================================
+
+  const audio2 = document.getElementById("audio2"); // the <audio> player
+  const genreSelect2 = document.getElementById("genre-select2"); // genre dropdown menu
+  const playBtn2 = document.getElementById("play-btn2"); // disc play/pause button
+  const nextBtn2 = document.getElementById("next-btn2"); // skip to next track button
+  const prevBtn2 = document.getElementById("prev-btn2"); // go to previous track button
+  const disc2 = document.getElementById("disc2"); // disc element for animation
+  const trackTitleEl2 = document.getElementById("track-title2"); // track title element
+  const trackArtistEl2 = document.getElementById("track-artist2"); // track artist element
+
+  // ========================================
+  // Shuffle logic — used to randomize track order
+  // ========================================
+  function shuffleArray2(array) {
+    const copy = array.slice(); // Make a copy so we don’t affect the original list
+    for (let i = copy.length - 1; i > 0; i--) {
+      // Pick a random index from 0 to i
+      const j = Math.floor(Math.random() * (i + 1));
+      // Swap the elements at i and j (Fisher–Yates shuffle algorithm)
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy; // Return the newly shuffled array
+  }
+
+  // ========================================
+  // Get the *previous* track in the queue. Helper function for handling back button
+  // ========================================
+  function getPreviousTrack2() {
+    const genre = currentTrackState2.genre;
+    const queue = shuffleQueues2[genre];
+
+    // If we're at the beginning, there's no previous track
+    if (!queue || currentTrackState2.index === 0) {
+      return null; // Already at the start
+    }
+
+    // Move back one track in the shuffled queue
+    currentTrackState2.index--;
+    return queue[currentTrackState2.index];
+  }
+
+  // ========================================
+  // Get the *next* track from the shuffled list
+  // ========================================
+  function getNextShuffledTrack2() {
+    const genre = currentTrackState2.genre;
+
+    // If there are no tracks for this genre, exit.
+    if (!tracks2[genre] || tracks2[genre].length === 0) return null;
+
+    // If the genre has never been shuffled, or its queue is empty, create one
+    if (!shuffleQueues2[genre] || shuffleQueues2[genre].length === 0) {
+      shuffleQueues2[genre] = shuffleArray2([...tracks2[genre]]);
+    }
+
+    const queue = shuffleQueues2[genre];
+
+    // If we’re not at the end of the current queue, go to the next track
+    if (currentTrackState2.index < queue.length - 1) {
+      currentTrackState2.index++;
+    } else {
+      // If we reached the end of the queue, reshuffle and start again
+      shuffleQueues2[genre] = shuffleArray2([...tracks2[genre]]);
+      currentTrackState2.index = 0;
+    }
+
+    return shuffleQueues2[genre][currentTrackState2.index];
+  }
+
+  // ========================================
+  // Set a track to play and update UI
+  // ========================================
+  function updateTrack2(track) {
+    currentTrack = track; // Save the current track
+    audio2.src = track.url; // Set the audio source
+    trackTitleEl2.textContent = track.title; // Update the title on the screen
+    trackArtistEl2.textContent = track.artist; // Update the artist on the screen
+  }
+
+  // ========================================
+  // Play a track from a selected genre
+  // ========================================
+  function playNextShuffledFromGenre2(genre) {
+    // If we're switching to a new genre, shuffle its tracks
+    if (genre !== currentTrackState2.genre) {
+      currentTrackState2.genre = genre;
+      shuffleQueues2[genre] = shuffleArray2([...tracks2[genre]]);
+      currentTrackState2.index = 0;
+    }
+
+    // Get the next track (or current one if already set)
+    const track2 =
+      shuffleQueues2[genre][currentTrackState2.index] ||
+      getNextShuffledTrack2();
+    if (!track2) return; // No track? Just exit
+
+    updateTrack2(track2); //Update UI + <audio> player
+    audio2.play();
+    disc2.classList.add("spin");
+  }
+
+  // ========================================
+  // When the genre dropdown changes
+  // ========================================
+  genreSelect2.addEventListener("change", () => {
+    playNextShuffledFromGenre2(genreSelect2.value);
+  });
+
+  // ========================================
+  // When a track finishes, play the next one
+  // ========================================
+  audio2.addEventListener("ended", () => {
+    const nextTrack = getNextShuffledTrack2();
+    if (nextTrack) {
+      updateTrack2(nextTrack);
+      audio2.play();
+      startMarqueeLoop2();
+    }
+  });
+
+  // ========================================
+  // Button controls
+  // ========================================
+
+  // Play or pause toggle
+  playBtn2.addEventListener("click", () => {
+    if (audio2.paused) {
+      audio2.play();
+      disc2.classList.add("spin");
+      startMarqueeLoop2();
+    } else {
+      audio2.pause();
+      disc2.classList.remove("spin");
+      stopMarqueeLoop2();
+    }
+  });
+
+  // Play next track
+  nextBtn2.addEventListener("click", () => {
+    const nextTrack = getNextShuffledTrack2();
+    if (nextTrack) {
+      updateTrack2(nextTrack);
+      audio2.play();
+      startMarqueeLoop2();
+    }
+  });
+
+  // Play previous track
+  prevBtn2.addEventListener("click", () => {
+    const previousTrack = getPreviousTrack2();
+
+    if (previousTrack) {
+      updateTrack2(previousTrack);
+      audio2.play();
+      startMarqueeLoop2();
+    } else {
+      // Already at the start — maybe replay current
+      audio2.currentTime = 0;
+      audio2.play();
+      startMarqueeLoop2();
+    }
+  });
+
+  // ========================================
+  // Marquee (scrolling title/artist text)
+  // ========================================
+  let marqueeInterval2 = null;
+
+  // Start marquee update loop (runs every 12 seconds)
+  function startMarqueeLoop2() {
+    clearInterval(marqueeInterval2); // Clear any previous loop to avoid double loops
+
+    marqueeInterval2 = setInterval(() => {
+      updateMarquee2();
+    }, 12000); // Covers 8s animation + 3s pause + buffer
+  }
+
+  // Stop the loop
+  function stopMarqueeLoop2() {
+    clearInterval(marqueeInterval2);
+  }
+
+  // Check if the text is too long and animate if needed
+  function updateMarquee2() {
+    const animateIfOverflowing = (el) => {
+      const wrapper = el.parentElement;
+
+      const isOverflowing = el.scrollWidth > wrapper.offsetWidth;
+      const isPlaying = !audio2.paused && !audio2.ended;
+
+      if (isPlaying && isOverflowing) {
+        // Reset animation
+        el.classList.remove("animate");
+        void el.offsetWidth; // Foroce reflow
+
+        // Reapply animation
+        el.classList.add("animate");
+
+        // Remove after animation completes to allow loop
+        setTimeout(() => {
+          el.classList.remove("animate");
+        }, 8000);
+      } else {
+        el.classList.remove("animate");
+      }
+    };
+
+    animateIfOverflowing(trackTitleEl2);
+    animateIfOverflowing(trackArtistEl2);
+  }
+
+  // ========================================
+  // Idle disc spin when music is paused
+  // ========================================
+  let idleSpinInterval2 = null;
+
+  // Function to do a single 360 spin once
+  function spinOnce2() {
+    disc2.classList.add("spin-once");
+    setTimeout(() => {
+      disc2.classList.remove("spin-once");
+    }, 600); // matches css animation duration
+  }
+
+  // Start the idle spin interval
+  function startIdleSpin2() {
+    if (idleSpinInterval2) return; // don't double-start
+    idleSpinInterval2 = setInterval(() => {
+      if (audio2.paused || audio2.ended) {
+        spinOnce2();
+      }
+    }, 5000); // every 5 seconds
+  }
+
+  // Stop idle spin when music is playing
+  function stopIdleSpin2() {
+    if (idleSpinInterval2) {
+      clearInterval(idleSpinInterval2);
+      idleSpinInterval2 = null;
+    }
+  }
+
+  function stopMobileMusic() {
+    if (audio2 && !audio2.paused) {
+      audio2.pause();
+      disc2.classList.remove("spin");
+      stopMarqueeLoop2();
+    }
+  }
+
+  // Listen to audio events to start/stop idle spin
+  audio2.addEventListener("play", stopIdleSpin2);
+  audio2.addEventListener("pause", startIdleSpin2);
+  audio2.addEventListener("ended", startIdleSpin2);
+
+  // ========================================
+  // When the page loads...
+  // ========================================
+  window.addEventListener("DOMContentLoaded", () => {
+    const track = getNextShuffledTrack2(currentTrackState2.genre); //first track
+    updateTrack2(track); // set it
+    startIdleSpin2(); // begin idle spin until music starts
+  });
+
+  const MOBILE_BREAKPOINT2 = 1024;
+  let isMobile2 = window.innerWidth < MOBILE_BREAKPOINT2;
+  // On window resize, update marque animation
+  window.addEventListener("resize", () => {
+    updateMarquee2();
+    const nowMobile2 = window.innerWidth < MOBILE_BREAKPOINT2;
+
+    if (isMobile2 && !nowMobile2) {
+      stopMobileMusic();
+    }
+
+    isMobile2 = nowMobile2;
+  });
+</script>
+
+<style is:global>
+  /* -------------------------------
+     MARQUEE (TRACK TEXT SCROLL)
+  ---------------------------------*/
+  /* Wrapper that clips overflowing text */
+  .marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 16px;
+    width: 100%;
+  }
+
+  /* Inner marquee text positioned absolutely */
+  .marquee {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    /* left: 100%; */
+  }
+
+  /* Animation class to scroll the marquee text */
+  .marquee.animate {
+    animation: marquee-scroll 8s linear forwards;
+  }
+
+  /* Keyframe for left-to-right scrolling effect */
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* -------------------------------
+     ROTATING MUSIC DISC
+  ---------------------------------*/
+
+  /* Full rotation animation for disc while music plays */
+  @keyframes continuous-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Class to trigger infinite spinning */
+  .spin {
+    animation: continuous-spin 2s linear infinite;
+  }
+
+  /* -------------------------------
+     DISC HOVER + SPIN ONCE EFFECT
+  ---------------------------------*/
+
+  /* Applies transition on hover and makes it clickable */
+  #disc {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+
+  /* On hover, do a single spin */
+  #disc:hover {
+    animation: one-time-spin 0.5s ease;
+    cursor: pointer;
+  }
+
+  /* One-time rotation (hover spin effect) */
+  @keyframes one-time-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Trigger a dramatic one-time spin with slight scaling */
+  @keyframes spinOnce {
+    from {
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      transform: rotate(1080deg) scale(1.1);
+    }
+  }
+
+  /* Class to activate one-time dramatic spin */
+  .spin-once {
+    animation: spinOnce 0.6s linear;
+  }
+</style>

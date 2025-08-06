@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ProjectCard from "../components/ProjectCard.astro";
+
 const pageTitle = "Home";
 const pageDescription =
-  "Richmann - Software Engineer x Product designer - designing clean, thouhtful user experiences and building the tech bringing those experiences to life.";
+  "Richmann - Design Engineer - designing clean, thouhtful user experiences and building the tech bringing those experiences to life.";
 const ogURL = "https://design.richmnn.com";
 const keywords =
-  "Richmann Addai, product design portfolio, UX design, UI designer Ghana, user interface design, digital product design, creative designer, Figma expert, clean design systems, product strategy, SaaS designer";
-const gap = 32;
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
 ---
 
 <BaseLayout
@@ -14,63 +16,103 @@ const gap = 32;
   pageDescription={pageDescription}
   ogURL={ogURL}
   keywords={keywords}
-  gap={gap}
 >
-  <!-- Header -->
-  <div class="w-full text-[16px]">
-    <p class="italic font-int text-tertiary">
-      The design portfolio of Richmann Addai
-    </p>
-    <h1
-      class="text-primary font-semibold flex flex-wrap gap-[8px] text-nowrap w-full font-mr"
-    >
-      <span>UI/UX Product Designer</span>
-      <span>|</span>
-      <span class="mt-[-6px] md:mt-0">Professional Button Aligner</span>
-      <span class="mt-[-6px] md:mt-0">|</span>
-      <span class="mt-[-6px] md:mt-0">Designer of Interfaces</span>
-    </h1>
-  </div>
+  <div slot="secondColumn">
+    <!-- Second Column (Main Intro Text) -->
+    <div class="w-full">
+      <!-- Personal Intro praragraph -->
+      <p class="w-full text-primary">
+        Hi, I’m Richmann. <br />
+        I design interfaces that feel simple, functional, and human. My Strength
+        lies in simplifying complex structures and translating that simplicity into
+        clear, intentional design. I do this by blending UI sensibility, UX thinking
+        and a builder’s mindset.<br /><br />
+        I'm currently shaping digital experiences @ Utopia Tech as Design Engineer(part
+        designer, part frontend developer) working across web and mobile.<br
+        /><br /> This portfolio is a glimpse into how I think and build. If it resonates,
+        I’d love to talk. <br /><br />
 
-  <!-- Hi -->
-  <div
-    class="w-full flex flex-col gap-[24px] text-[14px] font-mr font-semibold"
-  >
-    <hr />
-    <div class="flex flex-col gap-[48px]">
-      <h2 class="text-secondary">Hi,</h2>
-      <p class="text-tertiary">
-        <span class="block"
-          >I design interfaces that feel simple, functional, and human.</span
-        >
-        <span class="block"
-          >Currently shaping digital experiences — part designer, part engineer
-          — @ <a
-            target="_blank"
-            href="https://utopiatech.africa/"
-            class="underline text-primary hover:text-secondary">Utopia Tech</a
-          >
-        </span>
-        <span class="block">This is my humble design portfolio. </span>
-        <span class="block"
-          >You may wish to <a
-            href="/work"
-            class="underline text-primary hover:text-secondary"
-            >explore my work here</a
-          >
-        </span>
-        <span class="block"
-          >Or <a
-            href="/about"
-            class="underline text-primary hover:text-secondary"
-            >learn more about me</a
-          > — my work ethic, and my design process.
-        </span>
-        <span class="block"
-          >For extras, context and ways to reach me — the links below know more
-          than I do ↓
-        </span>
+        P.S.: You might be here for a bit. Play some music while you explore.
+        There’s something for everyone. Cheers.
       </p>
+    </div>
+  </div>
+  <div slot="thirdColumn">
+    <!-- Third column (list of projects) -->
+    <div class="w-full pb-[120px] 2xl:pb-[40px]">
+      <!-- Study house -->
+      <a href="/casestudies/studyhouse" class="w-full sticky top-0">
+        <ProjectCard
+          title="Study House • 2025"
+          img="/images/studyhouse/studyhouse.webp"
+          desc=`A self-initiated platform built to simplify life for the Ghanaian
+            university student. I led the product design from end-to-end. From
+            branding and UX strategy to building a UI system that helps students
+            stay organized, access services and resources, and reduce academic
+            stress.`
+          scope="Product Design, Branding, SaaS — Self-initiated"
+        />
+      </a>
+
+      <!-- CMS OS -->
+      <a href="/casestudies/cmsos" class="w-full sticky top-0">
+        <ProjectCard
+          title="CSM OS • 2025"
+          img="/images/cmsos/cmsos.webp"
+          desc=`To avoid rebuilding similar CMS flows (blogs, stores, dashboards) across client work, I designed a reusable system with modular UI logic and flexible backend support. The goal was to standardize UI behavior, ship faster, maintain quality, and focus more on solving client problems instead of reinventing the wheel.`
+          scope="Design Systems, Design Engineering, Tooling — Self-Initiated"
+        />
+      </a>
+
+      <!-- Hive -->
+      <a href="/casestudies/hive" class="w-full sticky top-0">
+        <ProjectCard
+          title="Hive • 2025"
+          img="/images/hive/hive.webp"
+          desc=`In Ghana’s housing market, trust is rare and transparency is worse. Hive is a real estate platform I cofounded to build safer, clearer ways to rent, buy, and book property online. I led the product design across web and mobile, crafting interfaces that simplify search, build trust, and prevent scams. Selected by ALX as one of the region’s most promising startups.`
+          scope="Design Engineering, Product Design, PropTech — Cofounder"
+        />
+      </a>
+
+      <!-- Relay -->
+      <a href="/casestudies/relay" class="w-full sticky top-0">
+        <ProjectCard
+          title="Relay • 2024"
+          img="/images/relay/relay.webp"
+          desc=`A Bulk SMS platform built In-House for commercial use. I was tasked with redesigning the full experience for internal commercialization. The goal was to simplify workflows and navigation, and  to give the UI a more modern feel than legacy competitors.`
+          scope="Product Design, B2B SaaS, Enterprise Software — In-house"
+        />
+      </a>
+
+      <!-- Banda -->
+      <a href="/casestudies/banda" class="w-full sticky top-0">
+        <ProjectCard
+          title="Banda • 2024"
+          img="/images/banda/banda.webp"
+          desc=`I created Banda as a fictional brand to explore what luxury ecommerce could look like through the lens of Ghanaian streetwear/thriftwear . The goal was to marry spacious visual design with a shopping experience that feels premium, to create an interface that quietly amplifies the clothes, not compete with them.`
+          scope="Web Design, Brand Concept, Ecommerce UX Design — Self-Initiated"
+        />
+      </a>
+
+      <!-- Silverbird -->
+      <a href="/casestudies/silverbird" class="w-full sticky top-0">
+        <ProjectCard
+          title="Silverbird Cinemas • 2024"
+          img="/images/silverbird/silverbird.webp"
+          desc=`Silverbird’s web experience needed a facelift. So I redesigned it to do what cinema websites should: help you find a movie, a time, and a ticket fast.`
+          scope="Web Design, UI/UX — Concept Project"
+        />
+      </a>
+
+      <!-- ECVC -->
+      <a href="/casestudies/ecvc" class="w-full sticky top-0">
+        <ProjectCard
+          title="EyeContact Vision Care • 2023"
+          img="/images/ecvc/ecvc.webp"
+          desc=`A premium offline experience deserves a premium online one. I was contracted to design and build the full website for EyeContact Vision Care, aligning their web presence with the quality of their in-person eye care.`
+          scope="Web Design, Frontend Development — Freelance"
+        />
+      </a>
     </div>
   </div>
 </BaseLayout>

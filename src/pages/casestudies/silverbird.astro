@@ -1,0 +1,203 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "Silverbird Case Study";
+const pageDescription =
+  "Case study for Silverbird Cinemas";
+const ogURL = "https://design.richmnn.com/casestudies/silverbird";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Overview</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">Summary</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">Old Interface</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>4.</p>
+          <a class="w-full" href="#section4">Redesigned Interface</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">
+          Silverbird Cinemas • Visual Case Study • 1 min Read
+        </h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Overview -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Overview</h2>
+        <p class="text-secondary">
+          Role : Web Designer
+          <br />
+          Type : Self-Initiated Concept
+          <br />
+          Year : 2024
+          <br />
+          Scope: E-commerce Experience, UI/UX Design, Exploration
+        </p>
+      </section>
+      <!-- 2. Summary -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">2. Summary</h2>
+        <p class="text-secondary">
+          Silverbird Cinemas is a beloved name in Ghana’s movie scene but their
+          digital experience hadn’t kept up with audience expectations. I
+          redesigned the website to reflect what people actually want from a
+          cinema site: a fast, clean way to find a movie, pick a time, and grab
+          a ticket with zero confusion.
+
+          <br />
+          <br />
+          This was a self-initiated concept project to explore how streamlined UX
+          could create a more modern web experience.
+        </p>
+      </section>
+
+      <!-- 3. Old Interface  -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">3. Old Interface</h2>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdold1.webp"
+            alt="silverbird old 1"
+          />
+        </div>
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdold2.webp"
+            alt="silverbird old 2"
+          />
+        </div>
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdold3.webp"
+            alt="silverbird old "
+          />
+        </div>
+      </section>
+      <!-- 4. Redesigned Interface  -->
+      <section
+        id="section4"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">4. Redesigned Interface</h2>
+        <p class="text-secondary">Now showing</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdnowshowing.webp"
+            alt="silverbird now showing"
+          />
+        </div>
+
+        <p class="text-secondary">Coming Soon</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdcomingsoon.webp"
+            alt="silverbird coming soon"
+          />
+        </div>
+
+        <p class="text-secondary">Get your tickets</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdgetyourticket.webp"
+            alt="silverbird get your ticket"
+          />
+        </div>
+
+        <p class="text-secondary">Movie Preview</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdmoviepreview.webp"
+            alt="silverbird movie preview"
+          />
+        </div>
+
+        <p class="text-secondary">Checkout</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdcheckout.webp"
+            alt="silverbird checkout"
+          />
+        </div>
+
+        <p class="text-secondary">Mobile Versions</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/silverbird/silverbirdmobileui.webp"
+            alt="silverbird mobile ui"
+          />
+        </div>
+
+        <p class="text-secondary">
+          Cinema-goers don’t want to decode a website. They want to catch the
+          latest blockbuster, on time, with no fuss. I simplified the booking
+          flow, reorganized content, and brought clarity to the their entire
+          movie discovery experience.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

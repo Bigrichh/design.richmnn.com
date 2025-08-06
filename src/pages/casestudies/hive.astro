@@ -1,0 +1,174 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "Hive Case Study";
+const pageDescription =
+  "Case study for Hive";
+const ogURL = "https://design.richmnn.com/casestudies/hive";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Overview</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">In a Nutshell</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">Interface</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">Hive • Visual Case Study • 1 min Read</h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Overview -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Overview</h2>
+        <p class="text-secondary">
+          Role : Design Engineer
+          <br />
+          Type : Co-founder-led product
+          <br />
+          Year : 2025
+          <br />
+          Scope: Research & Discovery, Product Design, Frontend
+        </p>
+      </section>
+      <!-- 2. In a Nutshell -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">2. In a Nutshell</h2>
+        <p class="text-secondary">
+          Hive is a trust-first property marketplace for Ghana. Most platforms
+          handle either rentals or sales but we set out to bring it all
+          together: long-term, short-term, residential, and commercial listings
+          in one clear, reliable space.
+          <br />
+          <br />
+          As Design Engineer, I led Product Design for Hive, shaping everything from
+          search to escrow and payments. My focus was on simplifying a space that
+          often feels overly formal and transactional, without losing the trust and
+          clarity users need. Hive is still in progress, but here’s a visual look
+          at how it’s coming together.
+        </p>
+      </section>
+
+      <!-- 3. Interface  -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">3. Interface</h2>
+        <p class="text-secondary">Auth</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hiveauth.webp"
+            alt="hive auth"
+          />
+        </div>
+
+        <p class="text-secondary">Search Results - Map untoggled</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivesearchresultsnomap.webp"
+            alt="hive search results no map"
+          />
+        </div>
+
+        <p class="text-secondary">Search Results - Map toggled</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivesearchresultsmap.webp"
+            alt="hive search results with map"
+          />
+        </div>
+
+        <p class="text-secondary">Listing Details</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivelistingdetails.webp"
+            alt="listing details"
+          />
+        </div>
+
+        <p class="text-secondary">
+          My Hive (Current Bookings / Rentals / Purchases)
+        </p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivemyhive.webp"
+            alt="my hive"
+          />
+        </div>
+
+        <p class="text-secondary">Mobile</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivemobileui.webp"
+            alt="hive mobile"
+          />
+        </div>
+
+        <p class="text-secondary">Design File</p>
+
+        <div class="w-full h-auto rounded-[4px] overflow-clip">
+          <img
+            class="size-full object-cover"
+            src="/images/hive/hivefigmapreview.webp"
+            alt="hive figma preview"
+          />
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

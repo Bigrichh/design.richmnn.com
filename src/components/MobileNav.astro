@@ -1,0 +1,138 @@
+---
+import Close from "../assets/icons/close.svg";
+import Hamburger from "../assets/icons/hamburger.svg";
+
+import MusicPlayer2 from "./MusicPlayer2.astro";
+---
+
+<!-- Navigation -->
+<div class="w-full z-50 p-[32px]">
+  <!-- Menu -->
+  <div class="w-full flex items-center justify-between">
+    <div class="flex flex-col gap-[4px]">
+      <h2 class="text-primary">Richmann Addai</h2>
+      <!-- Email address with hover effect -->
+      <p class="text-secondary hover:text-primary">richmanaddai@gmail.com</p>
+    </div>
+    <div class="size-[28px]">
+      <Hamburger
+        class="size-full"
+        id="hamburger-btn"
+        class="hover:opacity-80 hover:cursor-pointer"
+      />
+    </div>
+  </div>
+  <nav
+    id="mobileNav"
+    class="w-full h-[100vh] fixed top-0 left-0 z-50 hidden flex-col bg-bgprimary transition-opacity duration-500 ease-out opacity-0"
+  >
+    <!-- Top half: Personal info + navigation links -->
+    <div
+      class="w-full h-1/2 p-[32px] flex flex-col justify-between border-[0.5px] border-bdprimary"
+    >
+      <!-- User info -->
+      <div class="w-full flex items-center justify-between">
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">Richmann Addai</h2>
+          <!-- Email address with hover effect -->
+          <a
+            href="mailto:richmanaddai@gmail.com"
+            class="text-secondary hover:text-primary"
+          >
+            richmanaddai@gmail.com
+          </a>
+        </div>
+        <div class="size-[28px]">
+          <Close
+            class="size-full"
+            id="close-btn"
+            class="hover:opacity-80 hover:cursor-pointer"
+          />
+        </div>
+      </div>
+      <!-- Navigation links-->
+      <div class="w-full flex flex-col gap-[4px]">
+        <a href="/" class="text-secondary hover:text-primary">Work</a>
+        <a href="/about" class="text-secondary hover:text-primary">About</a>
+        <a href="/blog" class="text-secondary hover:text-primary">Blog</a>
+        <a href="/rinterest" class="text-secondary hover:text-primary"
+          >Rinterest</a
+        >
+        <a href="/contact" class="text-secondary hover:text-primary">Contact</a>
+      </div>
+    </div>
+    <!-- Bottom half: Music Player + Status -->
+    <div
+      class="w-full h-1/2 p-[32px] flex flex-col items-start justify-start gap-[64px] border-[0.5px] border-bdprimary"
+    >
+      <!-- MUSIC PLAYER -->
+      <div class="w-full" transition:persist>
+        <MusicPlayer2 />
+      </div>
+
+      <!-- AVAILABILITY / STATUS -->
+      <div class="w-full flex flex-col gap-[4px]">
+        <h2 class="text-primary">Availability</h2>
+        <p class="text-secondary">Last updated 01-08-2025</p>
+        <div class="flex items-center gap-[4px]">
+          <div
+            class="status-dot size-[10px] bg-[#008000] rounded-full flex items-center justify-center"
+          >
+            <div class="inner-dot size-[4px] bg-[#28FF28] rounded-full"></div>
+          </div>
+          <p class="text-secondary">Looking for my next role</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const hamburger = document.getElementById("hamburger-btn");
+    const close = document.getElementById("close-btn");
+    const mobileNav = document.getElementById("mobileNav");
+
+    hamburger.addEventListener("click", () => {
+      mobileNav.classList.remove("hidden");
+      mobileNav.classList.add("flex");
+      document.body.classList.add("no-scroll"); // 👈 disable scroll
+
+      // Trigger reflow to allow transition to kick in
+      void mobileNav.offsetWidth;
+
+      mobileNav.classList.add("opacity-100");
+      mobileNav.classList.remove("opacity-0");
+    });
+
+    close.addEventListener("click", () => {
+      // Start fade-out transition
+      mobileNav.classList.remove("opacity-100");
+      mobileNav.classList.add("opacity-0");
+
+      // After transition ends, hide completely
+      mobileNav.addEventListener(
+        "transitionend",
+        () => {
+          mobileNav.classList.add("hidden");
+          mobileNav.classList.remove("flex");
+        },
+        { once: true }
+      );
+
+      document.body.classList.remove("no-scroll");
+    });
+
+    const BREAKPOINT = 1024;
+    // Always listen for resize to auto-close mobile nav
+    window.addEventListener("resize", () => {
+      const isNowDesktop = window.innerWidth >= BREAKPOINT;
+
+      if (isNowDesktop) {
+        mobileNav.classList.add("hidden");
+        mobileNav.classList.remove("flex", "opacity-100", "opacity-0");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+  });
+</script>

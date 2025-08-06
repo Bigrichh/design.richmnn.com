@@ -1,0 +1,20 @@
+---
+const { img, date, alt, caption, class: customClass = "" } = Astro.props;
+---
+
+<div
+  class={`w-full h-fit rounded-[16px] border-[1.5px] border-bdprimary relative overflow-clip break-inside-avoid ${customClass}`}
+>
+  <div
+    class="w-fit p-[4px] bg-bgprimary/20 backdrop-blur-[10px] text-[10px] text-primary rounded-[8px] absolute top-[8px] left-[8px]"
+  >
+    <p>{date}</p>
+  </div>
+  <img class="w-full h-auto" src={img} alt={alt} />
+
+  <div
+    class="absolute bottom-[8px] left-[8px] right-[8px] p-[4px] bg-bgprimary/20 backdrop-blur-[10px] text-[10px] text-primary rounded-[8px]"
+  >
+    <p>{caption}</p>
+  </div>
+</div>

@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import RinterestImgCard from "../components/RinterestImgCard.astro";
+
+import ChevronDown from "../assets/icons/chevron-down.svg";
+
+const pageTitle = "Rinterest";
+const pageDescription =
+  "Richmann - Design Engineer - designing clean, thouhtful user experiences and building the tech bringing those experiences to life.";
+const ogURL = "https://design.richmnn.com/rinterest";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <div slot="secondColumn">
+    <!-- Second Column (Brief Intro Text) -->
+    <div class="w-full">
+      <p class="w-full text-primary">
+        Rinterest, my spin-off of Pinterest, is my quiet corner of the internet.
+        Here, you’ll find no likes, no algorithms, and no urgency. Just a visual
+        archive of my years through work, life, stillness and motion.
+        <br />
+        <br />
+        I made this to remember and to share. Many seasons, many shutters.
+        <br />
+        <br />
+        Filter by year, linger if you’d like. And if something speaks to you — well,
+        say something back. richmanaddai@gmail.com
+      </p>
+    </div>
+  </div>
+  <!-- Third column (list of links) -->
+  <div slot="thirdColumn">
+    <!-- Filters -->
+    <div
+      class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary text-primary"
+    >
+      <p>Filters</p>
+      <!-- Bottom row : Genre Dropdwon ( Select genere to play music from) -->
+      <div class="relative inline-block w-[100px]">
+        <select
+          id="year-select"
+          class="block w-full appearance-none bg-black focus:outline-none p-[8px] hover:outline-[1px] hover:outline-primary"
+        >
+          <!-- List of years genres -->
+          <option value="2025">2025</option>
+        </select>
+
+        <!-- Custom arrow icon on the right side of select -->
+        <div
+          class="pointer-events-none absolute inset-y-0 right-[8px] flex items-center text-white"
+        >
+          <ChevronDown />
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="grid-col grid-col--1"></div>
+      <div class="grid-col grid-col--2"></div>
+
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img1.webp"
+        alt="img1"
+        date="July 27 2025."
+        caption="This guy again? Yeah."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img2.webp"
+        alt="img2"
+        date="July 27 2025."
+        caption="Shoutout to anime for making overwork look cool."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img3.webp"
+        alt="img3"
+        date="July 27 2025."
+        caption="I paid to risk my life and I’d do it again."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img4.webp"
+        alt="img4"
+        date="July 27 2025."
+        caption="Moments before risking my life in the middle of nowhere."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img5.webp"
+        alt="img5"
+        date="July 27 2025."
+        caption="Unless it’s a Monday. Then I’m like 0.00001%."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img6.webp"
+        alt="img6"
+        date="July 27 2025."
+        caption="This desk has seen things. It needs therapy."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img7.webp"
+        alt="img7"
+        date="July 27 2025."
+        caption="Here for the Jollof."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img8.webp"
+        alt="img8"
+        date="July 27 2025."
+        caption="Suspended like my plans every weekend."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img9.webp"
+        alt="img9"
+        date="July 27 2025."
+        caption="Two guys. One gown. Zero clue what’s next."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img10.webp"
+        alt="img10"
+        date="July 27 2025."
+        caption="Touch grass guys. Very necessary."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img11.webp"
+        alt="img11"
+        date="July 27 2025."
+        caption="Motivation by Nokia."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img12.webp"
+        alt="img12"
+        date="July 27 2025."
+        caption="Mood. Staring into the void with a deadline due."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img13.webp"
+        alt="img13"
+        date="July 27 2025."
+        caption="Degrees and delusions. Iconic duo."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img14.webp"
+        alt="img14"
+        date="July 27 2025."
+        caption="At Peace."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img15.webp"
+        alt="img15"
+        date="July 27 2025."
+        caption="Inspiration?"
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img16.webp"
+        alt="img16"
+        date="July 27 2025."
+        caption="No debate."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img17.webp"
+        alt="img17"
+        date="July 27 2025."
+        caption="Read it again. Slowly this time."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img18.webp"
+        alt="img18"
+        date="July 27 2025."
+        caption="No Figma, no problem."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img19.webp"
+        alt="img19"
+        date="July 27 2025."
+        caption="He hasn’t seen sunlight since Tuesday. I am Him. He is me."
+      />
+      <RinterestImgCard
+        class="grid-item"
+        img="/images/rinterest/img20.webp"
+        alt="img20"
+        date="July 27 2025."
+        caption="Creating while the city sleeps."
+      />
+    </div>
+  </div>
+  <script is:inline>
+    function initColcade() {
+      new Colcade(".grid", {
+        columns: ".grid-col",
+        items: ".grid-item",
+      });
+    }
+
+    // After client-side route change (View Transitions)
+    document.addEventListener("astro:page-load", () => {
+      initColcade();
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .grid {
+    display: flex;
+    gap: 16px;
+    padding: 32px;
+  }
+
+  .grid-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    .grid-col--2 {
+      display: none;
+    }
+  }
+</style>

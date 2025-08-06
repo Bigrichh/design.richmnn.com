@@ -1,0 +1,360 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ChevronLeft from "../../assets/icons/chevron-left.svg";
+
+const pageTitle = "CMS OS Case Study";
+const pageDescription =
+  "Case study for CMS OS";
+const ogURL = "https://design.richmnn.com/casestudies/cmsos";
+const keywords =
+  "Richmann Addai, software engineer, design engineer, web development, product designer, UI/UX design, technology solutions, user experiences, entrepreneurial projects, Utopia Tech, personal projects, software development, design and development, software products";
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  ogURL={ogURL}
+  keywords={keywords}
+>
+  <!-- Second Column (Brief Intro Text) -->
+  <div slot="secondColumn">
+    <div class="w-full flex flex-col gap-[16px]">
+      <h2 class="w-full text-primary">On this page</h2>
+      <!-- Content Links -->
+      <div class="w-full flex flex-col gap-[4px] text-primary">
+        <div class="w-full flex gap-[8px] content-link">
+          <p>1.</p>
+          <a class="w-full" href="#section1">Backstory</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>2.</p>
+          <a class="w-full" href="#section2">The Problem</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>3.</p>
+          <a class="w-full" href="#section3">What I Built</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>4.</p>
+          <a class="w-full" href="#section4">My Role</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>5.</p>
+          <a class="w-full" href="#section5">Product Thinking & UX Principles</a
+          >
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>6.</p>
+          <a class="w-full" href="#section6">What's Next</a>
+        </div>
+        <div class="w-full flex gap-[8px] content-link">
+          <p>7.</p>
+          <a class="w-full" href="#section7">Try the figma prototype</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Third column (Case Study) -->
+  <div slot="thirdColumn">
+    <div class="w-full flex flex-col pb-[120px]">
+      <!-- Header -->
+      <section
+        class="w-full p-[32px] flex items-center justify-between border-[0.5px] border-bdprimary"
+      >
+        <h1 class="text-primary">CMS OS Case Study • 2 min Read</h1>
+        <a
+          href="/"
+          class="px-[12px] py-[8px] flex items-center gap-[8px] border-[1px] border-bdprimary hover:border-primary"
+        >
+          <ChevronLeft />
+          <p class="text-primary">Back</p>
+        </a>
+      </section>
+      <!-- 1. Backstory -->
+      <section
+        id="section1"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">1. Backstory</h2>
+        <p class="text-secondary">
+          As Design Engineer, I’ve collaborated with teams to deliver dozens of
+          client sites. I used to redesign and rebuild the same CMS
+          functionality for every freelance client and this was killing time,
+          quality and the number of projects we could take within a period. So I
+          designed & built CMS OS. It’s a modular, developer-first, custom built
+          content management system designed with Non-Technical Clients in mind.
+          It was designed for use across multiple projects.
+          <br />
+          <br />
+          The goal was to design a repeatable system that created a default structure
+          to provide both technical implementers and non-technical clients with speed
+          and peace of mind. I and many others have now successfully used this to
+          ship faster across teams because we spend less time reinventing the wheel
+          and focus more on what makes each project unique.
+        </p>
+      </section>
+      <!-- 2. The Problem -->
+      <section
+        id="section2"
+        class="w-full p-[32px] flex flex-col gap-[4px] items-start border-[0.5px] border-bdprimary"
+      >
+        <h2 class="text-primary">2. The Problem</h2>
+        <div class="text-secondary">
+          <p>
+            Most clients needed a cms panel to manage the content on the sites
+            we delivered to them. The nature of their projects often required us
+            building a custom content management system they could use to handle
+            content on their site behind the scenes. Overtime, I noticed the
+            foundational needs remained mostly the same:
+          </p>
+          <ul class="list-disc pl-[20px]">
+            <li>Blog publishing</li>
+            <li>Product management</li>
+            <li>Order dashboards</li>
+            <li>Newsletter tools</li>
+            <li>Contact form handling</li>
+            <li>Authentication & access control</li>
+            <li>Payment integrations</li>
+          </ul>
+          <p>
+            <br />
+            But instead of reusing, we were rebuilding these CMS features every time.
+            <br />
+            Which meant wasted time, missed deadlines, more bugs from rushed code
+            and fewer clients
+          </p>
+        </div>
+      </section>
+      <!-- 3. What I Built -->
+      <section
+        id="section3"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">3. What I Built</h2>
+          <div class="text-secondary">
+            <p>
+              I designed a built a simple CMS framework that adapts to each web
+              or project we undertake. A modular CMS starter kit that we can
+              clone from git, configure, and customize for every client project.
+              It works like an internal product for us — one core system with
+              many possible outputs.
+              <br />
+              <br />
+              For clients, the reusable CMS panel was designed with:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>Clear field naming with tooltips and guidance</li>
+              <li>Fully responsive UI for on the go updates</li>
+            </ul>
+            <p>
+              <br />
+              For Developers:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>
+                Backend integrations with Supabase, Firebase, custom Node APIs
+              </li>
+              <li>
+                Payment integrations for stripe and paystack ready out of the
+                box
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsosdashboard.webp"
+            alt="cms os dashboard"
+          />
+        </div>
+        <p class="text-secondary">The default CMS OS configurable dashboard</p>
+      </section>
+      <!-- 4. My Role -->
+      <section
+        id="section4"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">4. My Role</h2>
+          <div class="text-secondary">
+            <p>
+              I led everything in relation to design and frontend development:
+            </p>
+            <ul class="list-disc pl-[20px] text-secondary">
+              <li>
+                Product thinking: what to design and build and why it matters
+              </li>
+              <li>
+                UI/UX Design: designing the CMS flow so it’s usable by
+                non-techie clients
+              </li>
+              <li>Dev Setup: using Nuxt, Supabase, Firebase, and Git</li>
+              <li>
+                Collaboration: worked with a backend engineer for API design +
+                database structure
+              </li>
+              <li>Testing: ran tests with already existing client projects</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsosfigmapreview.webp"
+            alt="cmos figma preview"
+          />
+        </div>
+      </section>
+      <!-- 5. Product Thinking & UX Principles -->
+      <section
+        id="section5"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">5. Product Thinking & UX Principles</h2>
+          <p class="text-secondary">
+            Here’s a look into a few key UX decisions I took during the design
+            process
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>a. I Spoke the client’s language</p>
+          <p>
+            During testing, I noticed a pattern: even after thorough
+            walkthroughs, clients would still reach out asking what fields like
+            “Slug” or “Meta Title” meant.
+            <br />
+            <br />
+            So I reworked all fields names using plain-language metal models and
+            enforced clarity with descriptive placeholders, Inline helper text beneath
+            inputs and logical grouping of related fields.
+            <br />
+            <br />
+            Questions dropped to almost zero, even for first-time testers.
+          </p>
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsosblog.webp"
+            alt="cms os blog"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>b. Mobile Responsiveness</p>
+          <p>
+            Initially the CMS was designed strictly for desktop. This was
+            because we assumed clients mostly updated content from their offices
+            from Desktop/Tablet sized devices. But interviews revealed many made
+            quick edits on the go: uploading photos, tweaking product details,
+            or changing hours from their phones.<br />
+            So I refactored layouts to be fully responsive. I prioritized tap targets
+            and simplified navigation for touch ensuring core actions stayed visible
+            at all times
+          </p>
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsosmobileui.webp"
+            alt="cmsos mobileui"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>c. Light & Dark Mode Support</p>
+          <p>
+            Not groundbreaking, but thoughtful: <br />
+            I added both light and dark modes for clients who prefer one over the
+            other and for developers hopping between tools all day. It also makes
+            the CMS feel more “premium” and considered.
+          </p>
+        </div>
+
+        <div
+          class="w-full h-auto rounded-[4px] outline-[2px] outline-bdprimary"
+        >
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsoslightmode.webp"
+            alt="cmsos light mode"
+          />
+        </div>
+
+        <div class="w-full h-auto rounded-[4px]">
+          <img
+            class="size-full object-cover"
+            src="/images/cmsos/cmsosdarkmode.webp"
+            alt="cmsos dark mode"
+          />
+        </div>
+
+        <div class="flex flex-col gap-[4px] text-secondary">
+          <p>d. Simpler by Default</p>
+          <p>
+            The default experience was intentionally minimal to reduce cognitive
+            overload. And so reduce time taken to complete a task (writing blog
+            posts, uploading products etc) the interface focused on only the
+            essentials because our clients were busy people.
+          </p>
+        </div>
+      </section>
+      <!-- 6. What's Next -->
+      <section
+        id="section6"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">6. What's Next</h2>
+          <div class="text-secondary">
+            <p>
+              I’ve already reused this system across multiple freelance
+              projects, shaving design and dev time in half. I’m now working on:
+              <br />
+              <br />
+            </p>
+            <ul class="list-disc pl-[20px]">
+              <li>Adding AI-assisted content generation inside the CMS</li>
+              <li>
+                Chat bots to help client with in app issues so queries to me are
+                reduced
+              </li>
+              <li>
+                Creating a tailored analytic dashboard to show basic analytics
+                (traffic, top pages, etc.)
+              </li>
+              <li>Automating handoff so clients can onboard without my help</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- 7. Try The Figma Prototype -->
+      <section
+        id="section7"
+        class="w-full p-[32px] flex flex-col gap-[32px] items-start border-[0.5px] border-bdprimary"
+      >
+        <div class="flex flex-col gap-[4px]">
+          <h2 class="text-primary">7. Try The Figma Prototype</h2>
+          <div class="text-secondary">
+            <p>Send me an email. I'll share a link to the prototype. Cheers.</p>
+            <a
+              class="hover:text-primary hover:!underline"
+              href="mailto:richmanaddai@gmail.com">richmanaddai@gmail.com</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
