@@ -23,8 +23,11 @@
 body {
   background-color: var(--color-bgprimary);
   font-family: var(--font-gm);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
+  @media (min-width: 1024px) {
+    font-size: 13px;
+  }
 }
 
 body::-webkit-scrollbar,
